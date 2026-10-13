@@ -33,7 +33,7 @@ Tái khai thác data cũ Kangnam: lọc nhóm đủ điều kiện, dựng chu�
 
 > ⚠️ **ChatGPT: phải upload cả `SYSTEM-PROMPT.md` như một file Knowledge.** Bản ngắn đã lược nhiều — dòng `LỆNH ĐẦU TIÊN` trong đó buộc Agent đọc hết bộ não. Không upload thì Agent chạy bằng một nửa luật.
 
-> **Không upload:** thư mục `doc/` (tài liệu cho người đọc, upload chỉ làm Agent loãng) · `template/` (khung LP để người dựng tra cứu — token và khung trang đã được chép vào `crm-khung-landing.md`) · `prompts/` (câu lệnh để bạn copy, không phải tri thức).
+> **Không upload:** thư mục `doc/` (tài liệu cho người đọc, upload chỉ làm Agent loãng) · `template/` (bản lưu trang production + khung LP + file Excel mẫu — để người dựng tra cứu; token và khung trang đã chép vào `crm-khung-landing.md`) · `prompts/` (câu lệnh để bạn copy, không phải tri thức).
 
 ---
 

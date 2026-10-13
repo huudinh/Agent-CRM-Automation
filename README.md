@@ -229,7 +229,7 @@ Chỉ số **"% câu hỏi hậu phẫu do automation trả lời" phải bằng
 
 Token, font, khung trang là **bản sao nguyên văn khối `:root`** của trang production
 <https://benhvienthammykangnam.com.vn/quyen-loi-thanh-vien/phau-thuat-tham-my-20-10/>.
-Khung dựng sẵn: [`template/lp-tai-khai-thac.html`](template/).
+Bản lưu **trang production thật**: [`template/phau-thuat-tham-my-20-10/`](template/phau-thuat-tham-my-20-10/) — mở bằng trình duyệt để đối chiếu. Khung dựng sẵn: [`template/lp-tai-khai-thac.html`](template/).
 
 **Token lõi**
 ```css

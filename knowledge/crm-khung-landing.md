@@ -1,5 +1,5 @@
 # KHUNG LANDING PAGE & DESIGN SYSTEM LP v1.1
-Version: 1.1 — token và khung trang **lấy nguyên từ `:root` của trang production** <https://benhvienthammykangnam.com.vn/quyen-loi-thanh-vien/phau-thuat-tham-my-20-10/>; bản dựng sẵn ở [`template/lp-tai-khai-thac.html`](../template/)
+Version: 1.2 — token, khung trang và **bảng thành phần** lấy nguyên từ trang production <https://benhvienthammykangnam.com.vn/quyen-loi-thanh-vien/phau-thuat-tham-my-20-10/>; **bản lưu trang thật: [`template/phau-thuat-tham-my-20-10/`](../template/phau-thuat-tham-my-20-10/)** · khuôn dựng sẵn: [`template/lp-tai-khai-thac.html`](../template/)
 
 > Bộ token ở mục 1 là **bản sao nguyên văn** từ trang đang chạy, không phải diễn giải. Thư viện 17 trang production: [`crm-zone-dich-vu.md`](crm-zone-dich-vu.md) mục 4.
 
@@ -99,6 +99,54 @@ body  --bg #F5F8FC · padding-bottom 78px (chừa chỗ cho dock)
 ③ **`body` có `padding-bottom:78px`** để dock không che nội dung cuối trang.
 
 ④ **Breakpoint hẹp 379px** — production co `gap` của header lại ở màn này. Máy nhỏ vẫn phải đủ chỗ cho logo + pill hotline.
+
+---
+
+## 3b. BẢNG THÀNH PHẦN — copy nguyên, đừng tự chế
+
+Bản lưu trang thật: [`template/phau-thuat-tham-my-20-10/`](../template/phau-thuat-tham-my-20-10/) — **mở bằng trình duyệt để đối chiếu**. Khuôn dựng sẵn: [`template/lp-tai-khai-thac.html`](../template/).
+
+| Thành phần | Trang production dùng |
+|---|---|
+| `body` | `background:var(--bg)` · `line-height:1.5` · **`padding-bottom:78px`** chừa chỗ thanh CTA |
+| `.hdr` | nền **trắng** · sticky · `z-index:25` · `border-bottom:1px solid var(--line)` |
+| `.hdr-in` | `max-width:480px` · flex · `padding:6px 16px` · `min-height:56px` |
+| `.hdr-logo` | `flex-shrink:1; min-width:0; margin-right:auto` — logo **để trơn**, `max-height:30px` |
+| `.wrap` | `max-width:480px` · **`padding:44px 18px`** — thoáng, không phải 16px |
+| `h2` | `1.45rem` · **căn giữa** · **IN HOA** · màu `--blue` · `letter-spacing:.2px` |
+| `.sub` | căn giữa · `--mute` · `.95rem` · `margin-bottom:22px` |
+| `.sec-alt` | `linear-gradient(180deg,var(--rose),var(--bg))` — đổi nhịp bằng **gradient nhạt**, không bằng khối đặc |
+| `.u` (thẻ) | flex · `gap:14px` · nền trắng · viền `--line` · **`border-radius:18px`** · `padding:16px` |
+| `.btn` | **cam** · **IN HOA** · `font-weight:800` · `letter-spacing:.4px` · `padding:15px 28px` · **`border-radius:999px`** · **`box-shadow:0 8px 20px rgba(246,135,31,.35)`** |
+| `input, select` | `padding:14px` · **`border-radius:12px`** · nền `var(--bg)` · `font:inherit` |
+| `label` | `font-weight:700` · `.88rem` · `margin-bottom:14px` |
+| `label.ck` | flex · `gap:10px` · `font-weight:600` · ô tick `20×20` · `accent-color:var(--orange)` |
+| `.sticky` | fixed đáy · `backdrop-filter:blur(6px)` · nền gradient mờ · nút `flex:1; max-width:420px` |
+
+---
+
+## 3c. BA LỖI HAY GẶP KHI DỰNG TRANG MỚI
+
+Ba lỗi này đều đã xảy ra thật trên trang Agent sinh ra. Khuôn mẫu đã chặn sẵn.
+
+### ① Hero là khối NAVY ĐẶC đầy chữ
+Trang production **dẫn bằng ảnh trên nền sáng**, chữ rất ít, căn giữa, `h1` thật nằm trong `.sr-only`. Navy chỉ dùng cho **chữ** và cho thanh CTA — **không phủ nền**.
+
+⛔ Một khối navy cao nửa màn hình với 4 dòng chữ trắng là dấu hiệu rõ nhất của trang do máy sinh. Chưa có ảnh hero → dùng nền `linear-gradient(180deg,var(--rose),var(--bg))`, tiêu đề navy, **không** đảo thành nền tối.
+
+### ② Nút màu navy, chữ thường
+Nút chính của trang thật là **cam, IN HOA, đậm 800, bo tròn 999px, có đổ bóng cam**. Nút navy chỉ dùng cho **hành động phụ** (`.btn--ghost`: nền trắng, viền mảnh, chữ navy, không bóng).
+
+### ③ `<select>` để mặc định trình duyệt
+Select native trên Android/Windows nhìn như trang lỗi: nhỏ, vuông, lệch khỏi mọi thứ xung quanh. Phải style: `padding:14px` · `border-radius:12px` · nền `var(--bg)` · **`appearance:none` + mũi tên SVG tự vẽ** `background-position:right 16px center`.
+
+---
+
+## 3d. BIẾN CHƯA THAY PHẢI NHÌN THẤY ĐƯỢC
+
+Trang Agent sinh ra từng hiển thị `{{HOTLINE}}` nguyên văn ở header và footer — người xem tưởng trang hỏng.
+
+Khuôn mẫu bọc mọi biến trong `<span class="var">`, hiện **viền đứt cam + nền cam nhạt**. Thay hết biến thì xoá class. Quy tắc: **trang còn vệt cam là trang chưa giao được.**
 
 ---
 
