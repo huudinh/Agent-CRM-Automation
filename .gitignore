@@ -1,0 +1,20 @@
+# File do Agent/người dùng sinh ra trong lúc làm việc
+out/
+
+# ⛔ KHÔNG commit dữ liệu khách — xem knowledge/crm-rao-phap-ly.md mục 6
+data/
+*.csv
+*.xlsx
+!template/*.xlsx
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# File tạm của Office / hệ điều hành
+~$*
+*.tmp
+.DS_Store
+Thumbs.db

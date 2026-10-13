@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>{{OFFER_NAME}} — Tư vấn cùng bác sĩ chuyên khoa Hàm Mặt</title>
+<!--
+  ============================================================================
+  TEMPLATE LP TÁI KHAI THÁC · Design System LP v1
+  ============================================================================
+  Đây là KHUNG, không phải trang hoàn chỉnh. Ví dụ đang dựng theo LP-05
+  (An toàn có quy trình & FAQ nỗi sợ) vì module đó dùng nhiều section nhất.
+
+  Dựng module khác → bỏ section không cần, KHÔNG đổi thứ tự section còn lại.
+  Thứ tự chuẩn: hero → self-assessment → quy trình 5 bước → bác sĩ →
+  before-after 3 góc → timeline hồi phục → FAQ → ảnh ưu đãi → form → footer.
+
+  BA LUẬT MÀU ĐÃ ĐO (WCAG 2.1), không được phá:
+    ⛔ trắng trên --cta #f6871f = 2,50:1 → TRƯỢT cả ngưỡng large-text.
+       Chữ trên nút cam dùng --navy, cỡ ≥19px/700 (3,83:1 · AA large).
+    ⛔ trắng trên hotline pill gold = 1,65:1 → chữ pill dùng --navy (5,82:1).
+    ⛔ --cta không làm màu CHỮ (trên trắng 2,50:1).
+  Chi tiết + phương án đổi mã cam nếu brand bắt buộc chữ trắng:
+  knowledge/crm-khung-landing.md mục 2.
+
+  BIẾN phải thay khi phát hành (không hard-code):
+    {{HOTLINE}} {{ZALO_OA}} {{BOOKING_URL}} {{OFFER_IMAGE}}
+    {{OFFER_NAME}} {{OFFER_DEADLINE}} {{UTM}} {{DOCTOR}}
+  ============================================================================
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#294573; --navy-900:#1d3357; --navy-logo:#074E84; --navy-foot:#1b3a66;
+  --cta:#f6871f; --gold-1:#f4c268; --gold-2:#d7922a; --jade:#117a60;
+  --backdrop:#e3e8f1; --surface:#fff; --line:#dbe2ee;
+  --ink:#1f2a3c; --ink-2:#55637a;
+  --app-w:480px; --r:12px; --r-lg:16px; --r-pill:100px; --hdr-h:56px;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--backdrop);color:var(--ink);
+     font:400 15px/1.6 Roboto,system-ui,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:var(--navy)}
+
+/* ---------- khung 480px ---------- */
+.app{max-width:var(--app-w);margin:0 auto;background:var(--surface);
+     box-shadow:0 0 0 1px rgba(31,42,60,.06),0 18px 50px rgba(31,42,60,.14);
+     overflow-x:clip;min-height:100vh;padding-bottom:84px}
+.wrap{padding-inline:16px}
+section{padding-block:15px}
+
+/* ---------- header: CHỈ logo + hotline. Không menu, không CTA ---------- */
+.hdr{position:sticky;top:0;z-index:30;height:var(--hdr-h);background:rgba(255,255,255,.94);
+     backdrop-filter:blur(10px);border-bottom:1px solid var(--line);
+     display:flex;align-items:center;justify-content:space-between;padding-inline:16px}
+.hdr .logo{height:35px;width:auto}
+.hotline{display:inline-flex;align-items:center;gap:6px;text-decoration:none;
+  background:linear-gradient(135deg,var(--gold-1),var(--gold-2));
+  color:var(--navy);                    /* ⛔ KHÔNG dùng #fff: 1,65:1 */
+  font:700 13px/1 Roboto;padding:8px 13px;border-radius:var(--r-pill)}
+.hotline small{display:block;font:500 10px/1 Roboto;opacity:.85;margin-bottom:2px}
+
+/* ---------- nút ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;
+     border:0;border-radius:var(--r-pill);text-decoration:none;cursor:pointer;
+     padding:15px 24px;width:100%;text-align:center}
+.btn--cta{background:var(--cta);color:var(--navy);font:700 19px/1.2 Roboto}  /* ≥19px/700 */
+.btn--navy{background:var(--navy);color:#fff;font:700 16px/1.2 Roboto}       /* nút nhỏ hơn */
+.btn:focus-visible{outline:3px solid var(--gold-2);outline-offset:2px}
+
+/* ---------- tiêu đề section ---------- */
+.sec-head{margin:0 0 12px}
+.sec-head .pre{display:block;color:var(--cta);font:700 11px/1 Roboto;
+  letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px}
+.sec-head .main{display:block;color:var(--navy);font:900 24px/1.25 Roboto;letter-spacing:-.01em}
+.sec-head .bar{display:block;width:44px;height:4px;background:var(--cta);
+  border-radius:2px;margin-top:10px}
+
+/* ---------- hero ---------- */
+.hero{background:var(--navy);color:#fff;padding:22px 16px 20px}
+.hero .kicker{font:700 11px/1 Roboto;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--gold-1);margin:0 0 10px}
+.hero h1{font:900 26px/1.25 Roboto;margin:0 0 10px;letter-spacing:-.015em}
+.hero p{margin:0 0 16px;color:#dfe7f4;font-size:15px}
+
+/* ---------- thẻ ---------- */
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:14px 16px}
+.steps{counter-reset:s;list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.steps li{counter-increment:s;display:grid;grid-template-columns:30px 1fr;gap:10px;
+  align-items:start;background:#fff;border:1px solid var(--line);
+  border-radius:var(--r);padding:11px 13px}
+.steps li::before{content:counter(s);display:grid;place-items:center;
+  width:30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;font:700 14px/1 Roboto}
+
+/* ---------- ô ảnh tạm: dùng khi chưa có ảnh thật ---------- */
+.ph{border:2px dashed #c9d3e4;background:#eef2f8;border-radius:var(--r);
+    display:grid;place-content:center;gap:4px;text-align:center;padding:16px;color:var(--navy)}
+.ph b{font:700 13px/1 Roboto;letter-spacing:.08em}
+.ph span{font-size:13px}
+.ph i{font-size:12px;color:var(--ink-2)}
+.ba{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.ba .ph{border-color:var(--cta);background:#fff}
+
+/* ---------- timeline ---------- */
+.tl{list-style:none;margin:0;padding:0 0 0 18px;border-left:2px solid var(--line)}
+.tl li{position:relative;padding:0 0 14px 14px}
+.tl li::before{content:"";position:absolute;left:-25px;top:6px;width:10px;height:10px;
+  border-radius:50%;background:var(--cta);box-shadow:0 0 0 3px #fff}
+.tl b{color:var(--navy)}
+
+/* ---------- FAQ ---------- */
+details{background:#fff;border:1px solid var(--line);border-radius:var(--r);
+  padding:12px 14px;margin-bottom:8px}
+details summary{cursor:pointer;font:700 15px/1.4 Roboto;color:var(--navy);list-style:none}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:"+";float:right;color:var(--cta);font-weight:900}
+details[open] summary::after{content:"–"}
+details p{margin:10px 0 0;color:var(--ink-2);font-size:14px}
+
+/* ---------- ưu đãi: cả khối là link ---------- */
+.offer{display:block;border:3px solid var(--cta);border-radius:var(--r-lg);overflow:hidden}
+
+/* ---------- form ---------- */
+.reg{background:var(--navy);padding:18px 16px}
+.reg .sec-head .main{color:#fff}
+.reg .sec-head .pre{color:var(--gold-1)}
+.reg-card{background:#fff;border-radius:var(--r-lg);padding:16px}
+.reg label{display:block;font:700 13px/1.4 Roboto;color:var(--navy);margin-bottom:12px}
+.reg input[type=tel],.reg input[type=text],.reg select{
+  width:100%;margin-top:6px;padding:13px 12px;font:400 16px/1.3 Roboto;  /* ≥16px */
+  border:1px solid var(--line);border-radius:var(--r);background:#fff;color:var(--ink)}
+.reg input:focus-visible,.reg select:focus-visible{outline:3px solid var(--gold-2);outline-offset:1px}
+
+/* hai ô đồng ý TÁCH RIÊNG — không gộp, không tick sẵn */
+.agree{display:grid;grid-template-columns:22px 1fr;gap:9px;align-items:start;
+  font:400 13px/1.5 Roboto;color:var(--ink-2);margin-bottom:12px}
+.agree input{width:20px;height:20px;margin:2px 0 0;accent-color:var(--navy)}
+.agree--sensitive{background:#f1f8f5;border:1px solid var(--jade);
+  border-radius:var(--r);padding:11px 12px}
+.agree--sensitive b{color:var(--jade)}
+.privacy{margin:10px 0 0;font-size:12.5px;color:var(--ink-2);text-align:center}
+
+/* ---------- dock CTA dính đáy ---------- */
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:40;
+  max-width:var(--app-w);margin:0 auto;background:rgba(255,255,255,.96);
+  backdrop-filter:blur(10px);border-top:1px solid var(--line);
+  display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;
+  padding:10px 14px calc(10px + env(safe-area-inset-bottom,0px));
+  transform:translateY(120%);transition:transform .25s ease}
+.dock.on{transform:translateY(0)}
+.dock .who b{display:block;color:var(--navy);font:900 14px/1.2 Roboto}
+.dock .who span{display:block;color:var(--ink-2);font-size:12px}
+.dock .btn{width:auto;padding:12px 18px;font-size:19px}
+
+/* ---------- footer ---------- */
+.foot{background:#f1f1ef;color:var(--navy-foot);padding:20px 16px 26px;font-size:12.5px}
+.foot .flogo{height:34px;margin:0 auto 12px}
+.foot h4{font:700 13px/1.4 Roboto;margin:14px 0 6px;color:var(--navy-logo)}
+.foot ul{list-style:none;margin:0;padding:0}
+.foot .legal{margin-top:14px;padding-top:12px;border-top:1px solid #dcdcd8;line-height:1.7}
+.foot .unsub{display:block;margin-top:14px;text-align:center;font-weight:700;
+  color:var(--navy-logo);text-decoration:underline}
+.foot .note{margin-top:10px;font-style:italic;color:var(--ink-2)}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .dock{transition:none}
+}
+</style>
+</head>
+<body>
+<div class="app">
+
+  <!-- ===== HEADER: chỉ logo + hotline ===== -->
+  <header class="hdr">
+    <img class="logo" src="" alt="Kangnam" width="120" height="35">
+    <a class="hotline" href="tel:{{HOTLINE}}">
+      <span><small>Hotline</small>{{HOTLINE}}</span>
+    </a>
+  </header>
+
+  <main>
+    <!-- ===== ① HERO: hook NỐI LẠI MẠCH CŨ + câu trả lời + 1 CTA ===== -->
+    <section class="hero">
+      <p class="kicker">Chuyên khoa Hàm Mặt</p>
+      <h1>Bạn từng tìm hiểu chỉnh hàm tại Kangnam — và còn một câu chưa được trả lời</h1>
+      <p>Câu hỏi hay gặp nhất là <b>“có để lại tê bì không”</b>. Có, tê bì môi/cằm là
+        phản ứng thường gặp, thường kéo dài vài tháng tùy cơ địa rồi hồi phục, và được
+        bác sĩ theo dõi theo lịch tái khám. Dưới đây là toàn bộ quy trình và chế độ
+        theo dõi — <b>đọc trước, rồi quyết định sau</b>.</p>
+      <a class="btn btn--cta" href="#dangky">Đặt buổi tư vấn cùng bác sĩ</a>
+    </section>
+
+    <!-- ===== ② MICRO-CONVERSION: bước nhỏ trước khi xin số ===== -->
+    <section class="wrap">
+      <h2 class="sec-head">
+        <span class="pre">Bước 1 · 20 giây</span>
+        <span class="main">Tình trạng của bạn đang ở nhóm nào?</span>
+        <span class="bar"></span>
+      </h2>
+      <div class="card">
+        <label>Bạn quan tâm điều gì nhất?
+          <select name="concern">
+            <option value="">— Chọn —</option>
+            <option>Khớp cắn lệch, ăn nhai khó</option>
+            <option>Mặt nhô / lẹm khi nhìn nghiêng</option>
+            <option>Đã niềng nhưng chưa hết</option>
+            <option>Mặt vuông / bành, muốn thon gọn</option>
+          </select>
+        </label>
+        <a class="btn btn--navy" href="#dangky">Xem phương án phù hợp</a>
+      </div>
+    </section>
+
+    <!-- ===== ③ QUY TRÌNH 5 BƯỚC ===== -->
+    <section class="wrap">
+      <h2 class="sec-head">
+        <span class="pre">An toàn có quy trình</span>
+        <span class="main">Quy trình 5 bước</span>
+        <span class="bar"></span>
+      </h2>
+      <ol class="steps">
+        <li>Khám &amp; chụp phim X-quang/CT — xác định nguyên nhân do răng hay do xương</li>
+        <li>Hội chẩn chuyên khoa, thống nhất phương án theo chỉ định bác sĩ</li>
+        <li>Xét nghiệm &amp; khám tiền mê</li>
+        <li>Phẫu thuật với <b>vô cảm đa mô thức</b>, phòng mổ vô khuẩn, gây mê hồi sức</li>
+        <li>Chế độ theo dõi sau phẫu thuật theo mốc tái khám</li>
+      </ol>
+    </section>
+
+    <!-- ===== ④ BÁC SĨ ===== -->
+    <section class="wrap">
+      <h2 class="sec-head">
+        <span class="pre">Người trực tiếp thực hiện</span>
+        <span class="main">{{DOCTOR}}</span>
+        <span class="bar"></span>
+      </h2>
+      <div class="ph" style="aspect-ratio:4/3">
+        <b>4:3</b>
+        <span>Ảnh chân dung {{DOCTOR}} tại phòng khám</span>
+        <i>Cần: ảnh chính thức đã duyệt · ghi đúng chức danh chuyên khoa</i>
+      </div>
+      <p style="color:var(--ink-2);font-size:14px">Trưởng khoa Hàm Mặt. Phẫu thuật thực hiện
+        tại <b>tuyến bệnh viện</b>; khách ở tỉnh được <b>tư vấn và đặt khám tại viện tỉnh</b>,
+        phần phẫu thuật thực hiện tại bệnh viện Hà Nội hoặc Sài Gòn.</p>
+    </section>
+
+    <!-- ===== ⑤ BEFORE–AFTER 3 GÓC ===== -->
+    <section class="wrap">
+      <h2 class="sec-head">
+        <span class="pre">Case cùng tình trạng</span>
+        <span class="main">Trước — sau, 3 góc</span>
+        <span class="bar"></span>
+      </h2>
+      <div class="ba">
+        <div class="ph" style="aspect-ratio:1/1"><b>1:1</b><span>Thẳng</span></div>
+        <div class="ph" style="aspect-ratio:1/1"><b>1:1</b><span>45°</span></div>
+        <div class="ph" style="aspect-ratio:1/1"><b>1:1</b><span>Nghiêng</span></div>
+      </div>
+      <p class="note" style="font-size:12.5px;color:var(--ink-2);margin-top:8px">
+        Ảnh chỉ dùng khi có đồng ý bằng văn bản của khách.
+        <b>Kết quả phụ thuộc cơ địa từng người.</b></p>
+    </section>
+
+    <!-- ===== ⑥ TIMELINE HỒI PHỤC — chỉ mô tả MỐC CHUNG ===== -->
+    <section class="wrap">
+      <h2 class="sec-head">
+        <span class="pre">Biết trước để sắp lịch</span>
+        <span class="main">Hồi phục theo mốc</span>
+        <span class="bar"></span>
+      </h2>
+      <ul class="tl">
+        <li><b>10 ngày đầu</b> — băng nẹp liên tục; sưng nề &amp; thâm tím là phản ứng
+          bình thường, thường 10–15 ngày, tím chuyển vàng rồi mất dần. Tái khám lần 1,
+          cắt chỉ nếu có.</li>
+        <li><b>1 tháng</b> — kết thúc băng nẹp định hình; ăn mềm/lỏng, chia 4–6 bữa,
+          kiêng nếp và đồ cay nóng. Tái khám lần 2.</li>
+        <li><b>3 tháng</b> — đánh giá cân đối &amp; chức năng.</li>
+        <li><b>6 tháng</b> — đánh giá hài hòa thẩm mỹ.</li>
+        <li><b>9–12 tháng</b> — khám cuối, chỉ định tháo nẹp vít.</li>
+      </ul>
+      <p style="font-size:13px;color:var(--ink-2)">Các mốc trên là <b>mốc chung</b>,
+        tùy cơ địa từng người. Tình trạng cụ thể của bạn do bác sĩ đánh giá tại buổi khám.</p>
+    </section>
+
+    <!-- ===== ⑦ FAQ NỖI SỢ — TRẢ LỜI TRƯỚC, không khoét sâu ===== -->
+    <section class="wrap">
+      <h2 class="sec-head">
+        <span class="pre">Hỏi thẳng — đáp thẳng</span>
+        <span class="main">Bốn câu hay được hỏi nhất</span>
+        <span class="bar"></span>
+      </h2>
+
+      <details open>
+        <summary>Có để lại tê bì không?</summary>
+        <p>Có. Tê bì môi/cằm là phản ứng thường gặp, có thể kéo dài vài tháng tùy cơ địa
+          rồi hồi phục. Bác sĩ theo dõi theo lịch tái khám 10 ngày · 1 · 3 · 6 · 9–12 tháng.</p>
+      </details>
+
+      <details>
+        <summary>Nẹp vít có phải tháo không?</summary>
+        <p>Có chỉ định tháo, đánh giá ở mốc khám cuối 9–12 tháng, theo chỉ định bác sĩ.</p>
+      </details>
+
+      <details>
+        <summary>Mổ rồi còn phải niềng nữa không?</summary>
+        <p>Phần lớn ca cần <b>lộ trình chỉnh nha kết hợp phẫu thuật</b>. Bác sĩ đọc phim
+          và xác định từng ca cần chỉnh nha trước, sau, hay cả hai.</p>
+      </details>
+
+      <details>
+        <summary>Gây mê có an toàn không?</summary>
+        <p>Phẫu thuật thực hiện tại tuyến bệnh viện với <b>vô cảm đa mô thức</b>, phòng mổ
+          vô khuẩn và gây mê hồi sức. Bạn được khám tiền mê và xét nghiệm trước mổ.
+          Bạn có thể <b>mời người thân đi cùng buổi tư vấn</b> để nghe bác sĩ giải thích
+          trực tiếp về lợi ích và rủi ro.</p>
+      </details>
+    </section>
+
+    <!-- ===== ⑧ ẢNH ƯU ĐÃI: cả khối là link, KHÔNG nút rời ===== -->
+    <section class="wrap">
+      <a class="offer" href="#dangky">
+        <div class="ph" style="aspect-ratio:4/3">
+          <b>4:3</b>
+          <span>Banner {{OFFER_NAME}} — áp dụng đến {{OFFER_DEADLINE}}</span>
+          <i>Cần: bản thiết kế đã duyệt, có tên ưu đãi và hạn dùng in trên ảnh</i>
+        </div>
+      </a>
+    </section>
+
+    <!-- ===== ⑨ FORM ===== -->
+    <section class="reg" id="dangky">
+      <h2 class="sec-head">
+        <span class="pre">Miễn phí · không đặt lịch mổ</span>
+        <span class="main">Đặt buổi tư vấn cùng bác sĩ</span>
+        <span class="bar"></span>
+      </h2>
+      <div class="reg-card">
+        <form novalidate>
+          <label>Họ tên
+            <input type="text" name="name" autocomplete="name">
+          </label>
+          <label>Số điện thoại / Zalo
+            <input type="tel" name="phone" inputmode="numeric" autocomplete="tel" required>
+          </label>
+
+          <!-- ĐỒNG Ý MARKETING — ô riêng -->
+          <label class="agree">
+            <input type="checkbox" name="consent_mkt" required>
+            <span>Tôi đồng ý nhận thông tin tư vấn và ưu đãi qua Zalo / điện thoại.</span>
+          </label>
+
+          <!-- ĐỒNG Ý DỮ LIỆU NHẠY CẢM — ô RIÊNG, không tick sẵn, không gộp -->
+          <label class="agree agree--sensitive">
+            <input type="checkbox" name="consent_health">
+            <span><b>Đồng ý riêng về dữ liệu sức khỏe.</b> Tôi đồng ý cung cấp ảnh mặt /
+              phim chụp / mô tả tình trạng để bác sĩ chuyên khoa xem và tư vấn. Dữ liệu chỉ
+              dùng cho mục đích này, lưu trong thời hạn được thông báo, và tôi có thể
+              <b>rút đồng ý bất kỳ lúc nào</b>.</span>
+          </label>
+
+          <button class="btn btn--cta" type="submit">Nhận tư vấn từ bác sĩ</button>
+          <p class="privacy">Thông tin của bạn được bảo mật. Không muốn để lại số?
+            <a href="{{ZALO_OA}}">Nhắn riêng qua Zalo</a>.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== ⑩ FOOTER COMPLIANCE ===== -->
+  <footer class="foot">
+    <img class="flogo" src="" alt="Kangnam" width="110" height="34">
+    <p style="text-align:center;margin:0">
+      <a class="hotline" href="tel:{{HOTLINE}}"><span><small>Hotline</small>{{HOTLINE}}</span></a>
+    </p>
+
+    <h4>Hệ thống Bệnh viện và Viện thẩm mỹ trên Toàn quốc</h4>
+    <ul><li>Hà Nội · Hồ Chí Minh · Hải Phòng · Thanh Hóa · Nghệ An · Đà Nẵng · Cần Thơ</li></ul>
+
+    <h4>Kết nối</h4>
+    <ul><li>Facebook · YouTube · Instagram · TikTok</li>
+        <li>Đã thông báo Bộ Công Thương</li>
+        <li><a href="#">Chính sách bảo mật</a> | <a href="#">Điều khoản sử dụng</a></li></ul>
+
+    <div class="legal">
+      <b>CÔNG TY TNHH BỆNH VIỆN THẨM MỸ KANGNAM SÀI GÒN</b><br>
+      666 Cách Mạng Tháng Tám, P. Tân Sơn Nhất, TP.HCM<br>
+      benhvienthammy@kangnam.com.vn<br>
+      Giấy phép khám chữa bệnh <b>287/BYT-GPHĐ (03/12/2020)</b><br>
+      Chịu trách nhiệm nội dung: Công ty TNHH BVTM Kangnam Sài Gòn
+      <p class="note">Kết quả thẩm mỹ phụ thuộc cơ địa từng người. Mọi can thiệp thực hiện
+        theo chỉ định bác sĩ, kèm chế độ theo dõi sau phẫu thuật.</p>
+    </div>
+
+    <!-- BẮT BUỘC với mọi LP không phải giao dịch -->
+    <a class="unsub" href="#">Hủy nhận tin</a>
+  </footer>
+</div>
+
+<!-- ===== DOCK: hiện sau ~420px, tự ẩn khi tới form/footer ===== -->
+<div class="dock" id="dock" aria-hidden="true">
+  <div class="who"><b>KANGNAM</b><span>Chuyên khoa Hàm Mặt</span></div>
+  <a class="btn btn--cta" href="#dangky">Nhận ưu đãi ngay</a>
+</div>
+
+<script>
+(function(){
+  var dock = document.getElementById('dock');
+  var stop = document.getElementById('dangky');   // tới form thì ẩn dock
+  var shown = false;
+
+  // ẩn khi form/footer vào khung nhìn
+  var hideZone = false;
+  if ('IntersectionObserver' in window && stop) {
+    new IntersectionObserver(function(es){
+      hideZone = es[0].isIntersecting;
+      paint();
+    }, {rootMargin:'0px 0px -20% 0px'}).observe(stop);
+  }
+
+  function paint(){
+    var on = shown && !hideZone;
+    dock.classList.toggle('on', on);
+    dock.setAttribute('aria-hidden', on ? 'false' : 'true');
+  }
+
+  addEventListener('scroll', function(){
+    shown = scrollY > 420;
+    paint();
+  }, {passive:true});
+
+  /* ---- CHỖ GẮN ĐO LƯỜNG — thay bằng tracker thật khi phát hành ----
+     - scroll depth: mốc 25/50/75/100%
+     - click CTA: mọi .btn--cta + khối .offer
+     - submit form
+     - đọc {{UTM}} từ query string và gắn vào payload
+  ------------------------------------------------------------------ */
+})();
+</script>
+</body>
+</html>
