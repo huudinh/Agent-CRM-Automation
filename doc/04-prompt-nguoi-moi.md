@@ -2,6 +2,8 @@
 
 Dành cho bạn nếu **chưa quen thuật ngữ CRM/automation**. Không cần biết "L-state", "cổng OUT", "micro-conversion" là gì — cứ nói như đang nhắn tin.
 
+**Agent làm được cho cả 8 nhóm dịch vụ** (mắt · mũi · hàm mặt · vòng 1 · lipo · trẻ hóa da · da liễu · clinic). Ví dụ dưới đây dùng **hàm mặt** vì nhóm đó đã được nạp dữ liệu đầy đủ — nhóm khác thì cú pháp y nguyên, và Agent sẽ nói nếu nhóm đó **chưa có dữ liệu chuyên môn**.
+
 **Agent sẽ:** mở đầu bằng một dòng *"Mình hiểu là…"* để bạn soát → làm việc → nói kết quả bằng chữ dễ hiểu.
 Lệch ý thì trả lời `Không phải, mình muốn…` là xong.
 

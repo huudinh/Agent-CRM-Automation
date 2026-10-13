@@ -1,7 +1,8 @@
-# 03 · OUTPUT MẪU — CRM AUTOMATION · TÁI KHAI THÁC
+# 03 · OUTPUT MẪU — AGENT TÁI KHAI THÁC KHÁCH HÀNG
 
-Ví dụ xuyên suốt: **1.200 khách 6 tháng** · dịch vụ **chỉnh hàm hô/móm** · mục tiêu **kéo Outsold về cọc**.
-Số trong tài liệu này là **số minh họa** để bạn thấy hình dạng output, không phải số thật.
+Ví dụ xuyên suốt: **1.200 khách 6 tháng** · **ZONE Hàm Mặt**, dịch vụ chỉnh hàm hô/móm · mục tiêu **kéo Outsold về cọc**.
+
+> **Hàm Mặt chỉ là ZONE ví dụ.** Agent phục vụ cả 8 ZONE; output cho ZONE khác có **cùng hình dạng**, chỉ khác nội dung chân dung · bác sĩ · mốc hồi phục. Số trong tài liệu này là **số minh họa**, không phải số thật.
 
 ---
 

@@ -1,6 +1,8 @@
-# 02 · CÂU LỆNH — CRM AUTOMATION · TÁI KHAI THÁC
+# 02 · CÂU LỆNH — AGENT TÁI KHAI THÁC KHÁCH HÀNG
 
 ---
+
+> **Phạm vi: 8 ZONE.** Ví dụ trong file này là **ZONE Hàm Mặt** vì đó là ZONE đã nạp đầy đủ. Làm ZONE khác thì cú pháp y nguyên, chỉ thay tên dịch vụ — và Agent sẽ nói rõ nếu ZONE đó **chưa được nạp**.
 
 # 1. Công thức ra lệnh
 
@@ -16,6 +18,7 @@ Không gọi mode cũng được — Agent tự suy từ input và **nói rõ đ
 | Đã có nhóm + rào cản, muốn tin | **MODE 2 · ZBS-FLOW** |
 | Muốn một trang | **MODE 3 · LP-BUILD** |
 | Mô tả luồng đang chạy | **MODE 4 · FLOW-AUDIT** |
+| **Dán hội thoại / chat** | **MODE 5 · CHAT-MINE** |
 
 ---
 
@@ -121,6 +124,31 @@ Nếu không thêm được, đề xuất cách đạt cùng mục tiêu mà kh�
 
 ---
 
+# 5b. MODE 5 — CHAT-MINE
+
+**Tối thiểu**
+```
+MODE 5 — mình có 100 đoạn chat page cắt mí. Phân loại và viết bộ kịch bản cho trực page.
+[DÁN HỘI THOẠI]
+```
+
+**Đầy đủ** → dùng [`prompts/prompt-hoi-thoai-kich-ban.md`](../prompts/prompt-hoi-thoai-kich-ban.md) §1.
+
+**Biến thể hay dùng**
+```
+MODE 5 — chỉ phân loại, chưa cần kịch bản.
+```
+```
+Từ 100 hội thoại này, rút ra BA CHÂN DUNG để nạp ZONE Mắt.
+```
+```
+Liệt kê mọi câu trực page đã nói mà vi phạm rào y tế, kèm HT số mấy và câu thay thế.
+```
+
+> ⚠ **Ẩn danh trước khi dán**: bỏ số điện thoại thật, ảnh khách, CCCD. Giữ nguyên lời khách gõ.
+
+---
+
 # 6. Nói bằng lời thường — 12 câu chạy được ngay
 
 ```
@@ -183,6 +211,8 @@ Agent mở đầu bằng một dòng *"Mình hiểu là: …"* để bạn soát
 # 8. Năm câu Agent sẽ từ chối, và cách xử lý
 
 | Bạn gõ | Agent làm | Nếu bạn vẫn muốn |
+|---|---|---|
+| `Làm chiến dịch cho khách nâng mũi` (ZONE chưa nạp) | Nói rõ **ZONE Mũi chưa nạp**, làm phần không phụ thuộc ZONE, ghi `[CHỜ CẬP NHẬT]` phần chuyên khoa | Không có cách lách — mượn insight ZONE khác là sai chuyên môn |
 |---|---|---|
 | `Gửi hết cả danh sách, lọc sau` | Từ chối — cổng IN/OUT chạy trước | Agent nêu rủi ro pháp lý rồi làm theo, ghi rõ bạn đã quyết |
 | `Làm chuỗi 6 chạm cho chắc` | Cảnh báo vượt trần | Nói rõ bạn chấp nhận chiếm quota của luồng khác |

@@ -1,7 +1,9 @@
 # THƯ VIỆN KỊCH BẢN LANDING PAGE — 11 MODULE
-Version: 1.0
+Version: 1.1
 
-> 11 module LP chuẩn hóa theo trang **Quyền lợi thành viên / Ưu đãi** (trắc nghiệm · hỏi đáp · bác sĩ · before–after · ưu đãi · form).
+> **11 module dùng chung cho cả 8 ZONE** — chỉ nội dung bên trong thay, khung và mục tiêu giữ nguyên. Ví dụ trong file này là **ZONE Hàm Mặt**; đối chiếu thư viện 17 trang production ở [`crm-zone-dich-vu.md`](crm-zone-dich-vu.md) mục 4.
+>
+> 11 module chuẩn hóa theo trang **Quyền lợi thành viên / Ưu đãi** (trắc nghiệm · hỏi đáp · bác sĩ · before–after · ưu đãi · form).
 > **Chọn LP theo RÀO CẢN**, không theo dịch vụ, không theo sở thích. Bảng rào cản → LP ở `crm-phan-nhom-tai-khai-thac.md` mục 3 và 5.
 > Khung trang, màu, font, thứ tự thành phần: `crm-khung-landing.md`.
 
@@ -11,7 +13,7 @@ Version: 1.0
 
 | LP | Tên | Mục tiêu | Nhóm | Hành vi |
 |---|---|---|---|---|
-| **LP-01** | Hub trắc nghiệm "Do răng hay do xương?" | Định danh nhu cầu, lấy SĐT | A · B | ① |
+| **LP-01** | Hub trắc nghiệm theo ZONE | Định danh nhu cầu, lấy SĐT | A · B | ① |
 | **LP-02** | Chẩn đoán đúng nguyên nhân (khác biệt) | Hạ rào `L6.2` so sánh | A | ② |
 | **LP-03** | AI Face Design & case tự nhiên 3 góc | Thuyết phục "hợp mặt mình" | B | ② |
 | **LP-04** | Mốc hồi phục & trở lại công việc | Hạ rào `L6.4` thời gian | A · B | ② |
@@ -25,13 +27,14 @@ Version: 1.0
 
 ---
 
-## LP-01 · Hub trắc nghiệm "Do răng hay do xương?"
+## LP-01 · Hub trắc nghiệm theo ZONE
+*Production đang chạy: `trac-nghiem-mat` · `trac-nghiem-mui`. ZONE Hàm Mặt: "Do răng hay do xương?"*
 - **Mục tiêu:** định danh nhu cầu, lấy SĐT (hành vi ① TÌM HIỂU)
 - **Nhóm:** A · B
 - **Section:** Hook → quiz 3–4 câu → gợi ý phương án → form SĐT/Zalo
 - **CTA:** *"Xem kết quả & nhận tư vấn"*
 - **Proof:** mini case theo từng nhánh kết quả
-- **Lưu ý:** quiz **không được kết luận chẩn đoán**. Kết quả quiz là *"tình trạng của bạn nghiêng về nhóm …, cần bác sĩ đọc phim để xác định"* — không phải *"bạn bị hô do xương"*.
+- **Lưu ý:** quiz **không được kết luận chẩn đoán**. Kết quả quiz là *"tình trạng của bạn nghiêng về nhóm …, cần bác sĩ xem để xác định"* — không phải *"bạn bị hô do xương"*. **Mỗi ZONE có bộ câu hỏi riêng**; câu hỏi của ZONE Mắt không dùng cho ZONE Mũi.
 
 ## LP-02 · Chẩn đoán đúng nguyên nhân (khác biệt)
 - **Mục tiêu:** hạ rào *so sánh nơi khác* (`L6.2`) — hành vi ②
@@ -41,7 +44,8 @@ Version: 1.0
 - **Proof:** video BS đọc phim · phim trước–sau
 - **Lưu ý:** ⛔ không hạ thấp đối thủ. Khác biệt nằm ở **chẩn đoán**, không ở lời chê. Trang này cần **checkbox đồng ý RIÊNG** cho dữ liệu nhạy cảm vì có upload phim.
 
-## LP-03 · AI Face Design & case tự nhiên 3 góc
+## LP-03 · Mô phỏng kết quả & case tự nhiên 3 góc
+*ZONE Hàm Mặt / Mũi / Mắt dùng mô phỏng AI Face Design. ZONE da liễu dùng ảnh tiến triển theo liệu trình thay cho mô phỏng.*
 - **Mục tiêu:** thuyết phục *"tự nhiên, hợp mặt mình"* — hành vi ②
 - **Nhóm:** B
 - **Section:** Mô phỏng trên mặt mình → **"hài hòa thay vì nhỏ nhất"** → gallery 3 góc → đánh giá *"hợp gọt bao nhiêu"*
@@ -117,6 +121,8 @@ Version: 1.0
 ---
 
 ## Ba luật dùng thư viện
+
+**⓿ Dùng chung cho mọi ZONE.** 11 module là **khung mục tiêu**, không phải nội dung. ZONE nào cũng có "trang hạ rào tài chính" (LP-06) và "trang hạ rào sợ" (LP-05) — chỉ nỗi sợ, bằng chứng và bác sĩ bên trong là thay. ⛔ Không tạo module thứ 12 cho một ZONE; nếu thấy cần thì xem lại đã chọn đúng module chưa.
 
 **① Một LP = một rào cản = một CTA.** Trang gỡ hai rào cản cùng lúc sẽ gỡ hụt cả hai. Khách có nhiều rào cản → gỡ cái **chặn trước** (thứ tự ở `crm-phan-nhom-tai-khai-thac.md` mục 3.2).
 

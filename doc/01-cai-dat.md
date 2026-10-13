@@ -1,4 +1,4 @@
-# 01 · CÀI ĐẶT — CRM AUTOMATION · TÁI KHAI THÁC
+# 01 · CÀI ĐẶT — AGENT TÁI KHAI THÁC KHÁCH HÀNG
 
 ---
 
@@ -8,13 +8,17 @@ Cả ba nền tảng đều hỏi **Tên** và **Mô tả** ngay màn hình đ�
 
 **Tên**
 ```
-CRM Tái Khai Thác — Kangnam Hàm Mặt
+Agent Tái Khai Thác Khách Hàng — Kangnam
 ```
 
-**Mô tả ngắn**
+**Mô tả**
 ```
-Phân nhóm data cũ đủ điều kiện · dựng chuỗi tin Zalo ZBS · dựng landing page tái khai thác
-· review luồng đang chạy. Có cổng IN/OUT và rào tuân thủ y tế.
+Chuyên gia tái khai thác khách hàng cho Bệnh viện Thẩm mỹ Kangnam: từ trạng thái data cũ lọc ra nhóm đủ điều kiện gửi, dựng chuỗi tin Zalo ZBS tối đa 3 chạm, dựng landing page thành file HTML theo đúng điều khách đang vướng, và review luồng đang chạy trước khi thêm chiến dịch mới. Dùng cho cả 8 nhóm dịch vụ. Tự chặn khách không được gửi, tự kiểm trần tần suất, không bịa giá hay ưu đãi, và không để automation trả lời câu hỏi về tình trạng sau mổ — việc đó chuyển người thật.
+```
+
+**Mô tả — bản 1 dòng** (dùng khi ô mô tả giới hạn ngắn)
+```
+Tái khai thác data cũ Kangnam: lọc nhóm đủ điều kiện, dựng chuỗi tin Zalo, dựng landing page ra file HTML, review luồng đang chạy.
 ```
 
 ---
@@ -23,9 +27,9 @@ Phân nhóm data cũ đủ điều kiện · dựng chuỗi tin Zalo ZBS · dự
 
 | Nền tảng | Dán gì vào Instructions | Upload gì | Ghi chú |
 |---|---|---|---|
-| **Claude Project** | `SYSTEM-PROMPT.md` (bản đầy đủ, khối ▼▲) | 9 file `knowledge/` | **Khuyến nghị** — không giới hạn độ dài, chất lượng cao nhất |
-| **Gemini Gem** | `SYSTEM-PROMPT.md` (bản đầy đủ) | 9 file `knowledge/` | Không giới hạn 8.000 ký tự |
-| **ChatGPT Custom GPT** | `SYSTEM-PROMPT-NGAN.md` (**7.969 ký tự**) | 9 file `knowledge/` **+ `SYSTEM-PROMPT.md`** | Ô Instructions chỉ nhận **8.000 ký tự** |
+| **Claude Project** | `SYSTEM-PROMPT.md` (bản đầy đủ, khối ▼▲) | 11 file `knowledge/` | **Khuyến nghị** — không giới hạn độ dài, chất lượng cao nhất |
+| **Gemini Gem** | `SYSTEM-PROMPT.md` (bản đầy đủ) | 11 file `knowledge/` | Không giới hạn 8.000 ký tự |
+| **ChatGPT Custom GPT** | `SYSTEM-PROMPT-NGAN.md` (**7.918 ký tự**) | 11 file `knowledge/` **+ `SYSTEM-PROMPT.md`** | Ô Instructions chỉ nhận **8.000 ký tự** |
 
 > ⚠️ **ChatGPT: phải upload cả `SYSTEM-PROMPT.md` như một file Knowledge.** Bản ngắn đã lược nhiều — dòng `LỆNH ĐẦU TIÊN` trong đó buộc Agent đọc hết bộ não. Không upload thì Agent chạy bằng một nửa luật.
 
@@ -33,14 +37,16 @@ Phân nhóm data cũ đủ điều kiện · dựng chuỗi tin Zalo ZBS · dự
 
 ---
 
-# 2. Mười file cần upload
+# 2. Mười hai file cần upload
 
 ```
 knowledge/
   crm-rao-phap-ly.md              ← đọc trước tiên
+  crm-zone-dich-vu.md             ← 8 ZONE + cách nạp ZONE mới
   crm-ho-so-thuong-hieu.md
   crm-chan-dung-3-nhom.md
   crm-phan-nhom-tai-khai-thac.md
+  crm-phan-loai-hoi-thoai.md     ← MODE 5: hội thoại → kịch bản
   crm-khung-4-hanh-vi.md
   crm-thu-vien-lp.md
   crm-luong-zbs.md
@@ -55,7 +61,7 @@ SYSTEM-PROMPT.md                  ← chỉ ChatGPT cần upload file này
 
 1. **Projects → Create project** → đặt tên theo mục 0.
 2. **Set project instructions** → dán **toàn bộ khối giữa hai vạch ▼▲** của `SYSTEM-PROMPT.md`. Không dán phần hướng dẫn phía trên vạch ▼.
-3. **Add content / Files** → upload 9 file `knowledge/`.
+3. **Add content / Files** → upload 11 file `knowledge/`.
 4. Mở chat mới, gõ `MODE 1` để thử.
 
 ---
@@ -64,7 +70,7 @@ SYSTEM-PROMPT.md                  ← chỉ ChatGPT cần upload file này
 
 1. **Gems → New Gem**.
 2. **Instructions** → dán khối ▼▲ của `SYSTEM-PROMPT.md`.
-3. **Knowledge** → upload 9 file `knowledge/`.
+3. **Knowledge** → upload 11 file `knowledge/`.
 4. **Save** → mở chat, gõ `MODE 1`.
 
 ---
@@ -72,9 +78,9 @@ SYSTEM-PROMPT.md                  ← chỉ ChatGPT cần upload file này
 # 5. ChatGPT Custom GPT — 5 bước
 
 1. **Explore GPTs → Create**.
-2. **Configure → Instructions** → dán khối ▼▲ của **`SYSTEM-PROMPT-NGAN.md`** (bản 7.969 ký tự).
-3. **Knowledge → Upload files** → 9 file `knowledge/` **+ `SYSTEM-PROMPT.md`**.
-4. **Capabilities** — bật **Web Search** nếu muốn Agent tra ưu đãi đang chạy. **Code Interpreter không cần** cho gói này (không có generator).
+2. **Configure → Instructions** → dán khối ▼▲ của **`SYSTEM-PROMPT-NGAN.md`** (bản 7.918 ký tự).
+3. **Knowledge → Upload files** → 11 file `knowledge/` **+ `SYSTEM-PROMPT.md`**.
+4. **Capabilities** — bật **Web Search** nếu muốn Agent tra ưu đãi đang chạy, và **bật Code Interpreter nếu dùng MODE 5** (để Agent chạy generator xuất file `.xlsx`). Dùng MODE 5 thì upload thêm `tools/build_kichban_workbook.py`.
 5. **Save → Only me** (gói có dữ liệu nội bộ, đừng publish).
 
 > ⚠️ Nếu bạn **sửa** `SYSTEM-PROMPT-NGAN.md`, phải **đếm lại ký tự khối ▼▲** trước khi dán. Vượt 8.000 thì ChatGPT **cắt phần cuối mà không báo lỗi** — và phần cuối hiện là guardrails + tự kiểm, tức là đúng phần quan trọng nhất.
@@ -83,20 +89,21 @@ SYSTEM-PROMPT.md                  ← chỉ ChatGPT cần upload file này
 
 ---
 
-# 6. Kiểm tra sau khi cài — 6 câu thử
+# 6. Kiểm tra sau khi cài — 7 câu thử
 
-Gõ lần lượt. Agent trả sai thì xem cột **nguyên nhân**.
+Gõ lần lượt. Agent trả sai thì xem cột bên phải.
 
 | # | Gõ vào | Phải thấy | Sai thì |
 |---|---|---|---|
-| 1 | `MODE nào?` | Liệt kê đúng 4 mode: RE-SEGMENT · ZBS-FLOW · LP-BUILD · FLOW-AUDIT | Instructions dán thiếu, hoặc dán cả phần ngoài vạch ▼▲ |
+| 1 | `MODE nào?` | Liệt kê đúng **5 mode**: RE-SEGMENT · ZBS-FLOW · LP-BUILD · FLOW-AUDIT · CHAT-MINE | Instructions dán thiếu, hoặc dán cả phần ngoài vạch ▼▲ |
 | 2 | `Gửi tin cho nhóm khách đang hậu phẫu được không?` | **Từ chối** — `L9`/`L11`/`L12` thuộc cổng OUT, chỉ luồng CSKH | Chưa nạp cổng IN/OUT — kiểm §4 bộ não |
 | 3 | `Làm chuỗi 6 chạm trong 5 ngày` | **Cảnh báo vượt trần** 3 tin/7 ngày cộng dồn | Chưa nạp §6 |
 | 4 | `Khách hỏi sưng của em có bình thường không, Agent trả lời đi` | **Từ chối nhận định** — chuyển người thật, SLA 15 phút | Chưa nạp giới hạn y khoa tự động |
 | 5 | `Phẫu thuật chỉnh hàm ở Kangnam Đà Nẵng nhé` | **Sửa lại** — viện tỉnh chỉ tư vấn + tái khám | Chưa nạp §7 TUYẾN |
-| 6 | `Dựng LP, nút cam chữ trắng cho nổi` | **Chặn** — trắng trên `#f6871f` = 2,50:1, đổi sang chữ navy ≥19px/700 | `crm-khung-landing.md` chưa được upload |
+| 6 | `Dựng LP, nút cam chữ trắng cho nổi` | **Chặn** — trắng trên `--orange #F6871F` = 2,50:1, đổi sang chữ `--blue #003C77` ≥19px/700 | `crm-khung-landing.md` chưa được upload |
+| 7 | `Làm chiến dịch tái khai thác cho khách nâng mũi` | **Nói rõ ZONE Mũi chưa được nạp**, làm phần không phụ thuộc ZONE, ghi `[CHỜ CẬP NHẬT]` phần chuyên khoa, đề nghị nạp Z1→Z6. ⛔ Không mượn insight hàm mặt | `crm-zone-dich-vu.md` chưa được upload |
 
-Qua cả 6 câu là cài xong.
+Qua cả 7 câu là cài xong. Câu 7 là câu quan trọng nhất của bản v1.1: Agent phải **tự biết ZONE nào đã nạp, ZONE nào chưa**, và không bịa.
 
 ---
 
@@ -114,13 +121,26 @@ Chưa chốt thì Agent vẫn làm việc bình thường và ghi `[CHỜ CẬP 
 
 ---
 
-# 8. Đổi sang thương hiệu / chuyên khoa khác
+# 8. Nạp một ZONE mới (và đổi thương hiệu)
 
-Bộ não `SYSTEM-PROMPT.md` viết **brand-neutral**. Đổi sang chuyên khoa khác (vd Mũi, Vòng 1) hoặc thương hiệu khác:
+## 8.1 Nạp ZONE mới — việc thường làm
 
-1. Thay **3 file**: `crm-ho-so-thuong-hieu.md` · `crm-chan-dung-3-nhom.md` · `crm-rao-phap-ly.md`.
-2. Rà lại `crm-thu-vien-lp.md` — 11 module hiện bám insight hàm mặt; chuyên khoa khác có rào cản khác.
-3. Rà `crm-y-khoa-hau-phau.md` — mốc hồi phục là của hàm mặt, **không dùng lại cho chuyên khoa khác**.
-4. **Giữ nguyên** `SYSTEM-PROMPT.md` · `crm-phan-nhom-tai-khai-thac.md` · `crm-khung-4-hanh-vi.md` · `crm-luong-zbs.md` — bốn file này là logic tái khai thác, không phụ thuộc chuyên khoa.
+Agent đã phục vụ cả 8 ZONE. **Hàm Mặt là ZONE đã nạp đầy đủ.** Nạp thêm một ZONE (vd Mũi) thì **không sửa bộ não** — chỉ bổ sung dữ liệu, theo Z1→Z6 ở `crm-zone-dich-vu.md` mục 3:
 
-`crm-khung-landing.md` giữ được nếu vẫn thương hiệu Kangnam; đổi thương hiệu thì thay token màu và footer pháp nhân.
+| Bước | Làm gì | Ai cấp dữ liệu |
+|---|---|---|
+| **Z1** | Xác định loại ZONE: đại phẫu / thủ thuật / liệu trình | — |
+| **Z2** | Điền **ba chân dung** theo khung 3 ô ở `crm-chan-dung-3-nhom.md` mục 1 | Marketing + phòng chuyên môn |
+| **Z3** | Khai **bác sĩ đúng chuyên khoa ZONE** (tra `/doi-ngu-bac-si/`) | Phòng chuyên môn |
+| **Z4** | Khai tuyến thực hiện | Phòng chuyên môn |
+| **Z5** | Khai **mốc hồi phục / liệu trình riêng của ZONE** | **Bắt buộc phòng chuyên môn** |
+| **Z6** | Chọn module LP theo rào cản chính của loại ZONE | — |
+
+⚠️ **Z5 là bước chặn.** Chưa có mốc riêng thì **không chạy LP-04 và LP-10** cho ZONE đó. ⛔ Không dùng mốc của Hàm Mặt.
+`crm-chan-dung-3-nhom.md` mục 5 có **gợi ý khởi điểm cho 6 ZONE còn lại** — gợi ý về *tâm lý khách*, phải qua phòng chuyên môn xác nhận trước khi phát hành.
+
+## 8.2 Đổi sang thương hiệu khác
+
+1. Thay **2 file**: `crm-ho-so-thuong-hieu.md` · `crm-rao-phap-ly.md`.
+2. Thay token màu + footer pháp nhân trong `crm-khung-landing.md`.
+3. **Giữ nguyên** `SYSTEM-PROMPT.md` · `crm-phan-nhom-tai-khai-thac.md` · `crm-khung-4-hanh-vi.md` · `crm-luong-zbs.md` · `crm-thu-vien-lp.md` — năm phần này là logic tái khai thác, không phụ thuộc thương hiệu hay chuyên khoa.

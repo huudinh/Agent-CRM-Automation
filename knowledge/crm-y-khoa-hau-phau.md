@@ -1,7 +1,10 @@
-# MỐC HỒI PHỤC & TÁI KHÁM — DÙNG CHO NỘI DUNG TRẤN AN
-Version: 1.0
+# MỐC HỒI PHỤC & TÁI KHÁM — ZONE HÀM MẶT (VÍ DỤ MẪU)
+Version: 1.1
 
-> ⚠️ **Toàn bộ file này chỉ để mô tả MỐC CHUNG.** Automation được phép nói những mốc dưới đây. Automation **không được** nhận định tình trạng của một khách cụ thể. Xem `crm-rao-phap-ly.md` mục 2.
+> ⚠️ **Mốc trong file này là của ZONE Hàm Mặt.** Mỗi ZONE có mốc riêng do **phòng chuyên môn cấp** — ZONE Mũi, Vòng 1, Lipo 360, Da liễu đều khác. ⛔ **Không dùng chung, không suy ra.**
+> ZONE chưa có mốc riêng → ghi `[CHỜ CẬP NHẬT]` và **tạm thời không chạy LP-04 · LP-10** cho ZONE đó.
+>
+> ⚠️ **Và trong ZONE này, file chỉ mô tả MỐC CHUNG.** Automation được phép nói những mốc dưới đây. Automation **không được** nhận định tình trạng của một khách cụ thể. Xem `crm-rao-phap-ly.md` mục 2.
 >
 > Mọi mốc luôn kèm **"tùy cơ địa"**. Không có mốc nào là cam kết.
 
@@ -64,11 +67,15 @@ Version: 1.0
 
 ## 5. Những gì file này KHÔNG có
 
+**Mốc của ZONE khác.** Đây là mốc Hàm Mặt. Cần mốc cho Mũi / Vòng 1 / Lipo / Da liễu → phòng chuyên môn cấp, Agent **không suy ra từ bảng này**.
+
+
 Không có trong phạm vi và **phải để `[CHỜ CẬP NHẬT]`** nếu được hỏi:
 - Thời gian **trở lại công việc cụ thể** theo từng loại công việc.
 - **Tỷ lệ** biến chứng, tỷ lệ hài lòng, số ca đã thực hiện.
 - **Phác đồ thuốc**, loại thuốc, liều.
-- Mốc hồi phục riêng cho **từng kỹ thuật** (chỉnh hàm vs V-line vs trượt cằm).
+- Mốc hồi phục riêng cho **từng kỹ thuật** trong ZONE (chỉnh hàm vs V-line vs trượt cằm).
+- Mốc của **ZONE khác** — xem cảnh báo ở đầu file.
 - Chi phí, bảng giá, điều kiện trả góp.
 
 Cần những thông tin này → **bác sĩ hoặc phòng chuyên môn cung cấp**, không suy ra từ mốc chung.

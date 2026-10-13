@@ -3,6 +3,9 @@ out/
 
 # ⛔ KHÔNG commit dữ liệu khách — xem knowledge/crm-rao-phap-ly.md mục 6
 data/
+# Hội thoại thật: KHÔNG commit. Chỉ giữ file mẫu *.sample.json
+chats/*
+!chats/*.sample.json
 *.csv
 *.xlsx
 !template/*.xlsx

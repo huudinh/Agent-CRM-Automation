@@ -1,0 +1,184 @@
+{
+  "_doc": "FILE MẪU để chạy thử generator. Tên khách là GIẢ (KH-01…) — dữ liệu thật phải ẩn danh trước khi đưa vào. Bản đầy đủ 100 hội thoại: template/Kangnam_KichBan_CatMi.xlsx",
+
+  "zone": {
+    "ten": "Cắt Mí",
+    "dich_vu": "Cắt mí / vùng mắt",
+    "ten_file": "Kangnam_KichBan_CatMi_MAU",
+    "nhan_van_de": "Vấn đề mắt"
+  },
+  "nguon": "Nguồn: 8 hội thoại MẪU (file demo). Bản thật: 100 hội thoại inbox page chuyên khoa Cắt mí, đã ẩn danh trước khi phân tích.",
+  "ghi_chu_tong": "Chỉ lấy hội thoại có trao đổi hai chiều trong kỳ",
+
+  "van_de": ["Cắt mí (chung)", "Sụp mí", "Mở góc", "Bọng mỡ/mí dưới", "Da chùng/trẻ hóa", "Sửa lại mắt hỏng"],
+
+  "tin_hieu": [
+    "① nêu dịch vụ cụ thể (không phải hỏi chung chung)",
+    "② có mốc thời gian dự kiến ≤14 ngày",
+    "③ hỏi lịch / bác sĩ / chi phí theo đúng tình trạng của mình",
+    "④ gửi ảnh hoặc mô tả kỹ tình trạng",
+    "⑤ chủ động hỏi cách đặt lịch / địa chỉ / thủ tục"
+  ],
+
+  "nhom_tieu_de": {
+    "A": "NHÓM A — CHƯA để lại SĐT",
+    "B": "NHÓM B — ĐÃ để lại SĐT",
+    "C": "NHÓM C — SAU LÀM (LTV)"
+  },
+  "nhom_muc_tieu": {
+    "A": "Mục tiêu: TRẢ LỜI đúng câu hỏi → nhận định theo vùng → XIN SỐ kèm 2 khung giờ",
+    "B": "Mục tiêu: KẾT NỐI nhanh → đưa lên Booking. Chuỗi T+0 → T+7",
+    "C": "Trải nghiệm tốt → hậu phẫu → cross-sell / referral. Phủ giai đoạn S5–S6"
+  },
+
+  "nhom_dt": [
+    {"ma": "A1", "ten": "Chưa số · hỏi giá ngay, chưa rõ tình trạng", "insight": "'Có đáng tiền không? Có bị hớ không?' → không lờ giá, cho giá trị rồi xin ảnh/số"},
+    {"ma": "A2", "ten": "Chưa số · trung niên trẻ hóa mắt", "insight": "Da chùng – bọng mỡ – sụp lão hóa. Sợ mặt đơ/mất tự nhiên, tin tuyệt đối y khoa"},
+    {"ma": "A3", "ten": "Chưa số · khách sửa mắt lỗi / làm lại", "insight": "Cắt da vẫn sụp, treo cung bị theo. Cảnh giác cao, cần bằng chứng"},
+    {"ma": "B1", "ten": "Có số · vừa cho số, cần kết nối ngay", "insight": "Phản hồi ≤2 phút; kết nối Zalo; nhắc lưu danh bạ"},
+    {"ma": "B2", "ten": "Có số · chưa kết nối được", "insight": "Gọi không nghe / chưa rep. Mỗi tin một giá trị MỚI, không 'còn đó không ạ'"},
+    {"ma": "C1", "ten": "Sau làm · hậu phẫu", "insight": "Lo sưng/lành, cần được theo sát để yên tâm"}
+  ],
+
+  "l_code": [
+    {"ma": "L1.1", "nghia": "Lần đầu nhắn, chưa tư vấn (Cold)"},
+    {"ma": "L2.1", "nghia": "Đang tư vấn, hợp tác cung cấp thông tin (Warm)"},
+    {"ma": "L2.4", "nghia": "Hẹn nhắn lại sau"},
+    {"ma": "L4.1", "nghia": "Đã có SĐT + rõ dịch vụ → chuyển Sales (Hot)"},
+    {"ma": "L5.3", "nghia": "Có số, gọi không bắt máy"},
+    {"ma": "L6.5", "nghia": "Cơ hội ≤30 ngày · lo lắng / sợ đau"},
+    {"ma": "Existing", "nghia": "Khách đã làm — theo dõi hậu phẫu"}
+  ],
+
+  "hoi_thoai": [
+    {"ten_kh": "KH-01", "ngay": "05/10 08:14", "phu_trach": "Trực page 1", "so_tin": 11,
+     "sdt": "Không", "van_de": "Cắt mí (chung)", "nhom_dt": "A1", "l_code": "L1.1",
+     "do_nong": "COLD", "ghi_chu": "[00000] chỉ hỏi giá rồi im"},
+    {"ten_kh": "KH-02", "ngay": "05/10 09:02", "phu_trach": "Trực page 1", "so_tin": 17,
+     "sdt": "Không", "van_de": "Bọng mỡ/mí dưới", "nhom_dt": "A2", "l_code": "L2.1",
+     "do_nong": "WARM", "ghi_chu": "[10110] gửi ảnh, hỏi giá theo tình trạng"},
+    {"ten_kh": "KH-03", "ngay": "06/10 10:41", "phu_trach": "Trực page 2", "so_tin": 24,
+     "sdt": "Không", "van_de": "Sửa lại mắt hỏng", "nhom_dt": "A3", "l_code": "L2.1",
+     "do_nong": "WARM", "ghi_chu": "[10101] kể đã làm nơi khác, hỏi bác sĩ nào"},
+    {"ten_kh": "KH-04", "ngay": "06/10 14:20", "phu_trach": "Trực page 2", "so_tin": 31,
+     "sdt": "Không", "van_de": "Sụp mí", "nhom_dt": "A2", "l_code": "L2.4",
+     "do_nong": "HOT", "ghi_chu": "[11110] gửi ảnh, định làm trong tháng"},
+    {"ten_kh": "KH-05", "ngay": "07/10 09:15", "phu_trach": "Trực page 1", "so_tin": 9,
+     "sdt": "Có", "van_de": "Cắt mí (chung)", "nhom_dt": "B1", "l_code": "L4.1",
+     "do_nong": "HOT", "ghi_chu": "[11111] cho số, hỏi lịch và địa chỉ"},
+    {"ten_kh": "KH-06", "ngay": "07/10 16:48", "phu_trach": "Trực page 3", "so_tin": 15,
+     "sdt": "Có", "van_de": "Mở góc", "nhom_dt": "B2", "l_code": "L5.3",
+     "do_nong": "WARM", "ghi_chu": "[10100] cho số nhưng gọi không nghe"},
+    {"ten_kh": "KH-07", "ngay": "08/10 11:03", "phu_trach": "Trực page 3", "so_tin": 6,
+     "sdt": "Có", "van_de": "Cắt mí (chung)", "nhom_dt": "B2", "l_code": "L6.5",
+     "do_nong": "COLD", "ghi_chu": "[10000] cho số rồi hỏi 'có đau không' rồi im"},
+    {"ten_kh": "KH-08", "ngay": "09/10 08:30", "phu_trach": "CSKH", "so_tin": 12,
+     "sdt": "Có", "van_de": "Cắt mí (chung)", "nhom_dt": "C1", "l_code": "Existing",
+     "do_nong": "Hậu phẫu", "ghi_chu": "[11111] đã mổ, hỏi lịch cắt chỉ"}
+  ],
+
+  "kich_ban": [
+    {"nhom": "NHÓM A\nChưa SĐT", "ma": "A1", "giai_doan": "S1 · Nhận biết",
+     "insight": "Hỏi giá cắt mí ngay, chưa rõ tình trạng. 'Bao nhiêu tiền?'",
+     "l_code": "L1.1 / L2.1",
+     "khi_dung": "Khách mở đầu bằng hỏi giá; chưa gửi ảnh, chưa cho số",
+     "noi_dung": [
+       "Dạ chi phí cắt mí phụ thuộc tình trạng mắt của mình ạ: chỉ cắt da dư thì khác, mà kèm sụp mí hay bọng mỡ thì lại khác. Chị gửi em một ảnh chụp thẳng mắt mở bình thường, em nhờ bác sĩ chuyên khoa Mắt xem giúp rồi báo chị khung chi phí đúng tình trạng nhé.",
+       "(Đã xem ảnh) Dạ em thấy mí trên của chị có phần da hơi che nếp mí ạ. Trường hợp này bác sĩ cần khám trực tiếp để xác định là da dư hay kèm sụp mí, vì hai hướng xử lý khác nhau. Chị để lại số hoặc Zalo, bác sĩ nhắn trao đổi thêm giúp chị nhé.",
+       "(Khách vẫn ép báo giá qua tin) Dạ em hiểu chị muốn nắm chi phí trước cho dễ tính ạ. Em không báo một con số cứng vì sợ chị tính nhầm rồi đến nơi lại khác. Chị cho em số hoặc Zalo, em gửi bảng chi phí theo từng tình trạng để chị đối chiếu — chị tiện khung 9–11h hay 14–16h ạ?"
+     ],
+     "luu_y": "Không bắn giá cứng. Trả lời câu hỏi giá TRƯỚC (nêu lý do), rồi mới xin ảnh/số. Mỗi lần xin số phải có lý do mới + 2 khung giờ."},
+
+    {"nhom": "NHÓM A\nChưa SĐT", "ma": "A2", "giai_doan": "S2 · Tìm hiểu",
+     "insight": "Trung niên trẻ hóa mắt (da chùng, bọng mỡ, sụp lão hóa). Sợ mặt đơ, mất tự nhiên",
+     "l_code": "L2.1 / L2.4",
+     "khi_dung": "Khách lớn tuổi, ảnh có da dư – bọng mắt; muốn trẻ hóa",
+     "noi_dung": [
+       "Dạ qua ảnh em thấy mí trên của chị có da chùng che bớt nếp mí, vùng dưới hơi đầy ạ. Nhóm này thường xử lý theo hướng lấy lại nếp tự nhiên chứ không làm mí to, nên nhìn sẽ gọn và tỉnh hơn mà vẫn là mắt của mình.",
+       "Để bác sĩ chuyên khoa Mắt xem kỹ là da dư nhiều hay có kèm sụp mí, chị để lại số hoặc Zalo giúp em nhé — bác sĩ xem ảnh rồi nhắn lại cho chị, không mất phí ạ.",
+       "(Khách phân vân 'để sau') Dạ chị cứ cân nhắc kỹ ạ, can thiệp vùng mắt không nên vội. Em gửi chị vài ca cùng độ tuổi và cùng tình trạng để chị hình dung trước, khi nào tiện chị nhắn lại em nhé."
+     ],
+     "luu_y": "Nhấn 'tự nhiên, không trợn'. Tránh hứa trẻ ra X tuổi. Không khẳng định chẩn đoán qua ảnh."},
+
+    {"nhom": "NHÓM A\nChưa SĐT", "ma": "A3", "giai_doan": "S3 · Cân nhắc & nỗi sợ",
+     "insight": "Khách sửa mắt lỗi / làm lại. Đã mất niềm tin vào cả ngành",
+     "l_code": "L2.1 / L6.5",
+     "khi_dung": "Khách kể đã làm mắt nơi khác mà chưa ưng",
+     "noi_dung": [
+       "Dạ trường hợp đã can thiệp mà chưa ưng thì cần bác sĩ khám trực tiếp mới nói được sửa tới đâu, vì còn phụ thuộc mô còn lại và thời gian từ lần làm trước ạ. Chị cho em biết làm cách đây bao lâu và đang chưa ưng chỗ nào nhất?",
+       "Chị để lại số hoặc Zalo giúp em, bác sĩ chuyên khoa Mắt xem ảnh trước rồi trao đổi thẳng với chị là sửa được đến đâu — có trường hợp bác sĩ khuyên chờ thêm cho mô ổn định ạ.",
+       "(Khách cảnh giác) Dạ em hiểu chị thận trọng, làm lại thì ai cũng lo ạ. Em gửi chị hồ sơ bác sĩ và vài ca sửa lại đã được khách đồng ý cho chia sẻ, chị xem rồi quyết sau cũng được."
+     ],
+     "luu_y": "⚠ Không hứa 'sửa được hoàn toàn'. Không chê nơi khách đã làm. Ưu đãi sửa lại (nếu có) lấy từ mục biến số."},
+
+    {"nhom": "NHÓM B\nĐã có SĐT", "ma": "B1", "giai_doan": "S4 · Thực hiện",
+     "insight": "Vừa cho số — cần kết nối ngay, tránh nguội lead",
+     "l_code": "L4.1",
+     "khi_dung": "Khách vừa để lại SĐT trong hội thoại",
+     "noi_dung": [
+       "Dạ em nhận được số của chị rồi, em cảm ơn ạ. Trợ lý bác sĩ chuyên khoa Mắt sẽ nhắn Zalo cho chị trong ít phút nữa. Chị lưu giúp em số này tên 'BVTM Kangnam' để khỏi nhầm cuộc lạ nhé.",
+       "(Theo sát) Dạ trợ lý đã nhắn Zalo cho mình chưa ạ? Nếu chưa thấy chị báo em, em nhắc lại ngay."
+     ],
+     "luu_y": "Phản hồi ≤2 phút. Ưu tiên kết nối Zalo; nói rõ ai sẽ liên hệ và khi nào."},
+
+    {"nhom": "NHÓM B\nĐã có SĐT", "ma": "B2", "giai_doan": "S4 · Thực hiện",
+     "insight": "Đã cho số nhưng chưa kết nối được (gọi không nghe / chưa rep)",
+     "l_code": "L5.3",
+     "khi_dung": "Đã liên hệ ≥1 lần, khách chưa phản hồi",
+     "noi_dung": [
+       "Dạ trợ lý có gọi tư vấn cắt mí cho chị mà chưa gặp được ạ. Em gửi lại qua đây phần chi phí theo từng tình trạng để chị xem trước cho tiện nhé.",
+       "(BS đã xem ảnh) Dạ bác sĩ chuyên khoa Mắt đã xem ảnh chị gửi và có vài điểm muốn trao đổi trực tiếp. Chị tiện nghe máy khung 9–11h hay 14–16h ạ?",
+       "(Cho chọn cách liên lạc) Em gọi mấy lần chưa gặp được chị. Chị thích trao đổi qua Zalo hay qua điện thoại ạ? Em theo cách nào tiện cho chị nhất."
+     ],
+     "luu_y": "Mỗi tin một giá trị hoặc câu hỏi MỚI, không nhắn 'còn đó không ạ'. Tối đa theo trần tần suất."},
+
+    {"nhom": "NHÓM C\nSau làm (LTV)", "ma": "C1", "giai_doan": "S5 · Trải nghiệm & hậu phẫu",
+     "insight": "Vừa làm xong — lo sưng/lành, cần được theo sát để yên tâm",
+     "l_code": "Existing",
+     "khi_dung": "Khách đã mổ; theo nhịp hậu phẫu",
+     "noi_dung": [
+       "(D+1 hỏi thăm) Dạ chị ơi, mắt mình hôm nay thế nào ạ? Sưng nhẹ và hơi căng trong những ngày đầu là phản ứng thường gặp. Nếu chị thấy điều gì khác thường, chị nhắn em ngay để em chuyển điều dưỡng gọi lại nhé.",
+       "(Nhắc tái khám) Dạ lịch cắt chỉ/tái khám của chị theo chỉ định bác sĩ ạ — em nhắc trước một ngày cho chị khỏi quên nhé.",
+       "(Xin cảm nhận) Dạ mắt chị ổn định hơn chưa ạ? Nếu tiện, chị cho em xin một tấm ảnh để bác sĩ theo dõi tiến triển giúp chị."
+     ],
+     "luu_y": "⚠ Automation chỉ mô tả MỐC CHUNG. Mọi câu hỏi về tình trạng cụ thể chuyển điều dưỡng/bác sĩ, SLA 15 phút. Mốc cắt chỉ cụ thể CHỜ phác đồ."}
+  ],
+
+  "do_nong": [
+    {"muc": "HOT", "nghia": "4–5 điểm. Sẵn sàng đặt lịch — ưu tiên tuyệt đối.",
+     "tin_hieu": "Đủ 4–5 tín hiệu: nêu dịch vụ cụ thể + mốc thời gian gần + hỏi lịch/bác sĩ + gửi ảnh + chủ động hỏi cách đặt",
+     "sla": "Trực page phản hồi ≤5'. Khách đồng ý gọi → Telesale bậc 1.",
+     "nhip": "T+0 ≤2' xác nhận → T+30' kiểm phản hồi → T+2h gửi hồ sơ bác sĩ → T+24h chốt lịch",
+     "kb": "KB B1 (vừa cho số) → B2 nếu gọi nhỡ", "kpi": "Booking/HOT ≥60% · gọi đúng SLA ≥90%"},
+    {"muc": "WARM", "nghia": "2–3 điểm. Quan tâm rõ nhưng chưa có thời gian / đang so sánh.",
+     "tin_hieu": "2–3 tín hiệu: có nêu dịch vụ + (gửi ảnh HOẶC hỏi chi phí theo tình trạng)",
+     "sla": "Nhắn Zalo/IB trong ngày. Chưa có số → xin số trước.",
+     "nhip": "Chưa số → kịch bản A1–A3 lấy số, vào chuỗi T+0→T+7. Đã có số → D+3 / D+7 / D+15",
+     "kb": "KB A1–A3 (xin số) · B2 nếu đã có số", "kpi": "Booking/WARM ≥35% · ↑ tỷ lệ WARM→HOT"},
+    {"muc": "COLD", "nghia": "0–1 điểm. Mới hỏi tham khảo, thời gian còn xa.",
+     "tin_hieu": "≤1 tín hiệu: hỏi giá/địa chỉ rồi thôi, chưa gửi ảnh, chưa nêu tình trạng",
+     "sla": "KHÔNG ép gọi. Nhắn Zalo/IB ≤2h, đưa vào hàng đợi nuôi dưỡng.",
+     "nhip": "Chuỗi chạm nhẹ: N+1 hỏi thăm → N+3 hồ sơ bác sĩ → N+5 video quy trình",
+     "kb": "KB A1 (trả lời đúng câu hỏi + 1 giá trị, chưa ép số)", "kpi": "↑ tỷ lệ COLD→WARM"},
+    {"muc": "Hậu phẫu", "nghia": "Đã mổ, cần theo dõi an toàn.",
+     "tin_hieu": "Phản ánh sau mổ (đau, bất thường).",
+     "sla": "Phản hồi NGAY, chuyển CSKH y tế / bác sĩ phụ trách. SLA 15 phút.",
+     "nhip": "D+1 hỏi thăm → nhắc tái khám → xin cảm nhận khi ổn định",
+     "kb": "KB C1. Chuyển đúng người y tế, không tự xử lý.", "kpi": "An toàn KH — ưu tiên tuyệt đối"}
+  ],
+
+  "loi_quan_sat": [
+    {"loi": "Cam kết tuyệt đối", "chi_tiet": "Có hội thoại dùng 'an toàn tuyệt đối'. Từ cấm — generator chặn build nếu lọt vào kịch bản."},
+    {"loi": "Báo giá cứng chưa xác minh", "chi_tiet": "Có hội thoại bắn thẳng con số trong chat. Chỉ nêu khung theo tình trạng rồi mời khám; số cụ thể để ở mục biến số."},
+    {"loi": "Dán mẫu xin số lặp lại", "chi_tiet": "Câu xin số dán y hệt ở nhiều hội thoại. Mỗi lần xin số phải có lý do mới + 2 khung giờ."},
+    {"loi": "Chăm sóc sau khi xin số chậm", "chi_tiet": "Khách phàn nàn gọi không ai nghe. Bám SLA và chuỗi T+0 → T+7."}
+  ],
+
+  "bien_so": [
+    {"ten": "Ưu đãi tháng", "gia_tri": "[CHỜ CẬP NHẬT] — ⚠ lấy từ bản ưu đãi đã duyệt"},
+    {"ten": "Giữ ưu đãi khi cọc", "gia_tri": "[CHỜ CẬP NHẬT] — ⚠ số ngày giữ giá"},
+    {"ten": "Khung chi phí theo tình trạng", "gia_tri": "[CHỜ CẬP NHẬT] — ⚠ KHÔNG bắn giá cứng trong chat"},
+    {"ten": "Hotline hiển thị", "gia_tri": "[CHỜ CẬP NHẬT] — ⚠ chốt một số cho mỗi loại trang"},
+    {"ten": "Phác đồ hậu phẫu cắt mí", "gia_tri": "[CHỜ CẬP NHẬT] — ⚠ phòng chuyên môn cấp; chưa có thì không chạy kịch bản C1 phần mốc cụ thể"}
+  ]
+}
