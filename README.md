@@ -1,11 +1,21 @@
 # 🔁 Agent Tái Khai Thác Khách Hàng (Kangnam)
 
-> Version 1.1 · AI **phân nhóm data cũ · dựng chuỗi tin Zalo ZBS · dựng landing page tái khai thác · review luồng đang chạy** cho **Hệ thống Bệnh viện Thẩm mỹ Kangnam** — làm theo trạng thái dữ liệu, không làm theo cảm tính.
+> Version 1.2 · AI **phân nhóm data cũ · dựng chuỗi tin Zalo ZBS · dựng landing page tái khai thác · review luồng đang chạy** cho **Hệ thống Bệnh viện Thẩm mỹ Kangnam** — làm theo trạng thái dữ liệu, không làm theo cảm tính.
 
 **Phạm vi: cả 8 ZONE dịch vụ** — Mắt · Mũi · Hàm mặt · Vòng 1 · Lipo 360 · Trẻ hóa da · Da liễu · Kangnam Clinic.
 **Hàm Mặt là ZONE đã nạp đầy đủ làm ví dụ mẫu** — mọi ví dụ trong bộ tài liệu là của ZONE đó, không phải giới hạn của Agent. Nạp ZONE mới theo [`knowledge/crm-zone-dich-vu.md`](knowledge/crm-zone-dich-vu.md) (Z1→Z6), **không sửa bộ não**.
 
 Kiến trúc **BRAIN brand-neutral** ([`SYSTEM-PROMPT.md`](SYSTEM-PROMPT.md)) + **MODULE thương hiệu tách riêng** ([`knowledge/crm-ho-so-thuong-hieu.md`](knowledge/crm-ho-so-thuong-hieu.md)) → đổi thương hiệu chỉ cần thay 2 file, không sửa bộ não.
+
+## 📘 Hướng dẫn cài đặt
+
+**<https://claude.ai/artifact/XzPhgEQ3SaBBUZqRyBsov5>**
+
+Trang hướng dẫn cài trong ~10 phút: ba thẻ Copy sẵn (bộ não · bản ngắn · tri thức gộp), các bước cho **Claude · ChatGPT · Gemini**, và **21 câu lệnh** chia 4 nhóm — *truy vấn insight · kế hoạch sản xuất nội dung · tạo file Excel số liệu · tạo landing page chạy ZNS*.
+
+> Mở được bằng link, không cần tài khoản. Nội dung trong trang lấy thẳng từ repo này nên luôn khớp với bản mới nhất.
+
+---
 
 Gói anh em dùng chung kiến trúc: [`Agent-AdsOptimize-Kangnam`](../Agent-AdsOptimize-Kangnam/) (quảng cáo) · [`Agent-AdsOptimize-NhaKhoaParis`](../Agent-AdsOptimize-NhaKhoaParis/) (nha khoa).
 
@@ -16,30 +26,6 @@ Gói anh em dùng chung kiến trúc: [`Agent-AdsOptimize-Kangnam`](../Agent-Ads
 Nó **thiết kế chiến dịch, viết nội dung, dựng trang**. Việc bật luồng, bơm dữ liệu và gửi do người vận hành + nền tảng (ZBS/CDP) làm. Mọi đầu ra là **bản đề xuất chờ duyệt**.
 
 Nó cũng **không thay thế đội tư vấn**. Nó làm cho đúng thông điệp đến đúng nhóm vào đúng thời điểm, rồi nhường việc chốt cho người thật.
-
----
-
-## Tám ZONE — và ba loại ZONE
-
-| ZONE | Loại | Đã nạp? |
-|---|---|---|
-| **Mắt** · **Mũi** · **Hàm mặt** · **Vòng 1** · **Lipo 360** | Đại phẫu | Hàm mặt ✅ · còn lại ⬜ |
-| **Trẻ hóa da** | Thủ thuật / không phẫu thuật | ⬜ |
-| **Da liễu** · **Kangnam Clinic** | Liệu trình / spa | ⬜ |
-
-**Loại ZONE quyết định nhịp gửi, rào cản chính và module LP** — không phải tên dịch vụ:
-
-| | Đại phẫu | Thủ thuật | Liệu trình |
-|---|---|---|---|
-| Rào cản chính | **SỢ** biến chứng | **NGỜ** hiệu quả | **NGẠI** đi nhiều lần |
-| Chu kỳ quyết định | **1–6 tháng**, theo mùa nghỉ | 2–6 tuần | 1–3 tuần |
-| Vai người quyết định | **rất mạnh** | trung bình | thấp |
-| Ràng buộc TUYẾN | **có** | một phần | **không** |
-| Đòn bẩy ưu đãi | **yếu** | trung bình | **mạnh** |
-
-Nạp một ZONE da liễu theo khuôn đại phẫu sẽ cho ra chiến dịch gửi quá thưa, gỡ sai rào cản và bỏ mất đòn bẩy ưu đãi.
-
-**ZONE chưa nạp thì Agent vẫn làm được ngay** phần không phụ thuộc chuyên khoa — cổng IN/OUT · nhóm R1–R5 · trần tần suất · khung chuỗi 3 chạm · chọn module LP theo rào cản · khung HTML. Nó nói rõ ZONE chưa nạp, ghi `[CHỜ CẬP NHẬT]` phần chuyên khoa, và ⛔ **không mượn insight của ZONE khác**.
 
 ---
 
@@ -110,21 +96,6 @@ Mỗi chiến dịch mới phải trả lời được **một câu**: ***tin n�
 **PTHM hàm mặt chỉ thực hiện tại tuyến bệnh viện** (Hà Nội · Sài Gòn · Nguyễn Trãi). **Viện tỉnh chỉ tư vấn + tái khám.**
 
 Nhiều khách nhóm A ở tỉnh — đây là tình huống thường gặp, không phải ngoại lệ. Phải nói rõ *"tư vấn/đặt khám tại viện tỉnh, phẫu thuật tại tuyến bệnh viện"* ngay trong tin và trên LP. Để mặc là **vượt phạm vi giấy phép**.
-
----
-
-## Đầu vào chuẩn — sáu nhóm
-
-| Nhóm | Nội dung |
-|---|---|
-| ① **Khách hàng** | đối tượng / nhận diện |
-| ② **Hệ thống** | Caresoft → ERP → CDP · **trường dữ liệu đang có** |
-| ③ **Phương thức** | kênh được phép dùng: ZBS · ZNS · OA · gọi |
-| ④ **Quy trình** | luồng đang chạy · ai bàn giao cho ai |
-| ⑤ **Hội thoại thực tế** | chat/gọi đã có → rút **lời khách nguyên văn** |
-| ⑥ **Thư viện Landing** | trang production đang chạy (17 trang, xem `crm-zone-dich-vu.md`) |
-
-Thiếu nhóm nào thì Agent nêu rõ và **vẫn làm phần còn lại**. Nhóm ⑤ là nhóm **quý nhất và hay thiếu nhất**: có hội thoại thật thì hook và FAQ lấy nguyên văn lời khách; chưa có thì Agent nói rõ phần đó đang là **giả định**.
 
 ---
 
@@ -281,8 +252,8 @@ Các cặp đạt: trắng/`--blue` **10,98 AAA** · `--blue`/`--bg` **10,31 AAA
 
 | File | Nội dung | Upload? |
 |---|---|---|
-| [SYSTEM-PROMPT.md](SYSTEM-PROMPT.md) | **Bộ não** 20 mục · 24.038 ký tự | ✅ (ChatGPT: upload cả như file Knowledge) |
-| [SYSTEM-PROMPT-NGAN.md](SYSTEM-PROMPT-NGAN.md) | Bản ngắn cho ChatGPT · **7.918 / 8.000 ký tự** | — dán vào Instructions |
+| [SYSTEM-PROMPT.md](SYSTEM-PROMPT.md) | **Bộ não** 21 mục · 27.801 ký tự | ✅ (ChatGPT: upload cả như file Knowledge) |
+| [SYSTEM-PROMPT-NGAN.md](SYSTEM-PROMPT-NGAN.md) | Bản ngắn cho ChatGPT · **7.993 / 8.000 ký tự** | — dán vào Instructions |
 | [knowledge/](knowledge/) | **11 file tri thức** | ✅ |
 | [prompts/](prompts/) | **4 prompt vận hành** — câu lệnh để bạn copy | ❌ |
 | [tools/build_kichban_workbook.py](tools/) | **Generator `.xlsx`** cho MODE 5 — có 15 cổng chặn | ✅ (nếu dùng MODE 5) |
@@ -316,10 +287,9 @@ Các cặp đạt: trắng/`--blue` **10,98 AAA** · `--blue`/`--bg` **10,31 AAA
 ## Bắt đầu
 
 1. Cài theo [`doc/01-cai-dat.md`](doc/01-cai-dat.md) — mất khoảng 10 phút.
-2. Chạy **6 câu thử** ở mục 6 của file đó để biết cài đúng chưa.
+2. Chạy **7 câu thử** ở mục 6 của file đó để biết cài đúng chưa.
 3. Gõ `MODE 1` với mô tả data của bạn, hoặc nói bằng lời thường:
    *"Mình có đống data cũ 6 tháng nay không ai gọi. Nên gửi cho ai trước?"*
-4. Làm ZONE khác Hàm Mặt → đọc [`knowledge/crm-zone-dich-vu.md`](knowledge/crm-zone-dich-vu.md) mục 3 (Z1→Z6) trước.
 4. Làm ZONE khác Hàm Mặt → đọc [`knowledge/crm-zone-dich-vu.md`](knowledge/crm-zone-dich-vu.md) mục 3 (Z1→Z6) trước.
 
 Chưa quen thuật ngữ CRM → vào [`doc/04-prompt-nguoi-moi.md`](doc/04-prompt-nguoi-moi.md) trước.

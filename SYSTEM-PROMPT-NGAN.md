@@ -1,6 +1,6 @@
 # 📋 SYSTEM PROMPT BẢN NGẮN — AGENT TÁI KHAI THÁC KHÁCH HÀNG
 
-> **Dùng khi nào:** nền tảng giới hạn độ dài ô Instructions — cụ thể **ChatGPT Custom GPT, tối đa 8.000 ký tự**, trong khi [`SYSTEM-PROMPT.md`](SYSTEM-PROMPT.md) dài **27.387 ký tự** nên dán vào sẽ bị cắt mất phần sau.
+> **Dùng khi nào:** nền tảng giới hạn độ dài ô Instructions — cụ thể **ChatGPT Custom GPT, tối đa 8.000 ký tự**, trong khi [`SYSTEM-PROMPT.md`](SYSTEM-PROMPT.md) dài **27.801 ký tự** nên dán vào sẽ bị cắt mất phần sau.
 >
 > **Cách dùng:** dán khối ▼▲ dưới đây vào **Instructions**, và upload **`SYSTEM-PROMPT.md`** như một file Knowledge (cùng 11 file `knowledge/`).
 >

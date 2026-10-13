@@ -1,5 +1,31 @@
 # CHANGELOG — AGENT TÁI KHAI THÁC KHÁCH HÀNG
 
+## v1.2.1 — 13/10/2026 · Dựng lại khuôn LP theo trang production
+
+Trang Agent sinh ra có UI/UX lệch hẳn khỏi trang thật. Dựng lại `template/lp-tai-khai-thac.html` bám đúng `template/phau-thuat-tham-my-20-10/` (bản lưu production đã có sẵn trong repo, kèm 39 file ảnh).
+
+**Ba lỗi, đều thấy trên trang Agent vừa sinh:**
+
+| Lỗi | Trang thật làm gì |
+|---|---|
+| Hero là **khối navy đặc** đầy chữ, chiếm ~40% màn hình | Nền **sáng**, chữ ít, căn giữa; navy chỉ dùng cho **chữ** |
+| Nút **navy, chữ thường** | Nút **cam · IN HOA · đậm 800 · bo 999px · có đổ bóng cam** |
+| `<select>` để **mặc định trình duyệt** | `padding:14px` · bo `12px` · nền `--bg` · **mũi tên SVG tự vẽ** |
+
+Khoảng cách cũng sai: `.wrap` của trang thật là `padding:44px 18px`, bản cũ dùng 16px nên mọi thứ dính nhau.
+
+**Thêm:** biến `{{...}}` chưa thay được bọc `<span class="var">` → hiện viền đứt cam. Trang Agent sinh ra từng hiển thị `{{HOTLINE}}` nguyên văn ở header và footer, người xem tưởng trang hỏng. Quy tắc: **trang còn vệt cam là trang chưa giao được.**
+
+**Đối chiếu sau khi sửa:** 14/14 rule thành phần trùng khớp trang thật (`body · hdr · hdr-in · wrap · h2 · sub · sec-alt · u · sticky · label · label.ck · label.ck input · note · sr-only`), 16/16 token trùng.
+
+**Một chỗ cố ý khác trang thật:** nút cam dùng chữ `--blue #003C77` (**4,39:1**) thay vì `#fff` (**2,50:1**, trượt cả ngưỡng chữ lớn). Đây là lỗi tiếp cận có thật của bộ nhận diện production — xem *Việc còn treo*.
+
+`knowledge/crm-khung-landing.md` thêm **3b** bảng 14 thành phần copy nguyên · **3c** ba lỗi hay gặp · **3d** luật biến chưa thay.
+
+README thêm link trang hướng dẫn, và dọn hai khối bị lặp nguyên văn (24 và 15 dòng) do script vá chạy hai lần.
+
+---
+
 ## v1.2 — 13/10/2026 · MODE 5 — CHAT-MINE: hội thoại thô → file Excel
 
 Bản v1.1 khai **đầu vào ⑤ hội thoại thực tế** là nhóm quý nhất, rồi để trống chỗ đó. Bản này lấp: thêm **mode thứ năm** biến đống chat thô thành **file `.xlsx` 5 sheet** khớp khuôn `template/Kangnam_KichBan_CatMi.xlsx` (100 hội thoại cắt mí có thật).
