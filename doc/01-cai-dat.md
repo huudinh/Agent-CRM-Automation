@@ -1,4 +1,4 @@
-# 01 · CÀI ĐẶT — AGENT TÁI KHAI THÁC KHÁCH HÀNG
+# 01 · CÀI ĐẶT — AGENT-CRM-AUTOMATION
 
 ---
 
@@ -8,7 +8,7 @@ Cả ba nền tảng đều hỏi **Tên** và **Mô tả** ngay màn hình đ�
 
 **Tên**
 ```
-Agent Tái Khai Thác Khách Hàng — Kangnam
+Agent-CRM-Automation
 ```
 
 **Mô tả**
@@ -29,7 +29,7 @@ Tái khai thác data cũ Kangnam: lọc nhóm đủ điều kiện, dựng chu�
 |---|---|---|---|
 | **Claude Project** | `SYSTEM-PROMPT.md` (bản đầy đủ, khối ▼▲) | 11 file `knowledge/` | **Khuyến nghị** — không giới hạn độ dài, chất lượng cao nhất |
 | **Gemini Gem** | `SYSTEM-PROMPT.md` (bản đầy đủ) | 11 file `knowledge/` | Không giới hạn 8.000 ký tự |
-| **ChatGPT Custom GPT** | `SYSTEM-PROMPT-NGAN.md` (**7.993 ký tự**) | 11 file `knowledge/` **+ `SYSTEM-PROMPT.md`** | Ô Instructions chỉ nhận **8.000 ký tự** |
+| **ChatGPT Custom GPT** | `SYSTEM-PROMPT-NGAN.md` (**7.983 ký tự**) | 11 file `knowledge/` **+ `SYSTEM-PROMPT.md`** | Ô Instructions chỉ nhận **8.000 ký tự** |
 
 > ⚠️ **ChatGPT: phải upload cả `SYSTEM-PROMPT.md` như một file Knowledge.** Bản ngắn đã lược nhiều — dòng `LỆNH ĐẦU TIÊN` trong đó buộc Agent đọc hết bộ não. Không upload thì Agent chạy bằng một nửa luật.
 
@@ -78,7 +78,7 @@ SYSTEM-PROMPT.md                  ← chỉ ChatGPT cần upload file này
 # 5. ChatGPT Custom GPT — 5 bước
 
 1. **Explore GPTs → Create**.
-2. **Configure → Instructions** → dán khối ▼▲ của **`SYSTEM-PROMPT-NGAN.md`** (bản 7.993 ký tự).
+2. **Configure → Instructions** → dán khối ▼▲ của **`SYSTEM-PROMPT-NGAN.md`** (bản 7.983 ký tự).
 3. **Knowledge → Upload files** → 11 file `knowledge/` **+ `SYSTEM-PROMPT.md`**.
 4. **Capabilities** — bật **Web Search** nếu muốn Agent tra ưu đãi đang chạy, và **bật Code Interpreter nếu dùng MODE 5** (để Agent chạy generator xuất file `.xlsx`). Dùng MODE 5 thì upload thêm `tools/build_kichban_workbook.py`.
 5. **Save → Only me** (gói có dữ liệu nội bộ, đừng publish).

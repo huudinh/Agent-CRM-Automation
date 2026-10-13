@@ -1,12 +1,12 @@
-# 📋 SYSTEM PROMPT BẢN NGẮN — AGENT TÁI KHAI THÁC KHÁCH HÀNG
+# 📋 SYSTEM PROMPT BẢN NGẮN — AGENT-CRM-AUTOMATION
 
-> **Dùng khi nào:** nền tảng giới hạn độ dài ô Instructions — cụ thể **ChatGPT Custom GPT, tối đa 8.000 ký tự**, trong khi [`SYSTEM-PROMPT.md`](SYSTEM-PROMPT.md) dài **27.801 ký tự** nên dán vào sẽ bị cắt mất phần sau.
+> **Dùng khi nào:** nền tảng giới hạn độ dài ô Instructions — cụ thể **ChatGPT Custom GPT, tối đa 8.000 ký tự**, trong khi [`SYSTEM-PROMPT.md`](SYSTEM-PROMPT.md) dài **27.791 ký tự** nên dán vào sẽ bị cắt mất phần sau.
 >
 > **Cách dùng:** dán khối ▼▲ dưới đây vào **Instructions**, và upload **`SYSTEM-PROMPT.md`** như một file Knowledge (cùng 11 file `knowledge/`).
 >
 > **Gemini Gems và Claude Projects không cần bản này** — dán bản đầy đủ cho chất lượng cao hơn.
 >
-> ⚠️ **Bản này đang ở 7.993 / 8.000 ký tự — chỉ dư 7.** Bản ngắn chỉ giữ **luật cứng** + đường dẫn tới chỗ tra. Đã đẩy hết về bộ não và `knowledge/`: khung 3 ô chân dung · bảng L-state → R1–R5 · bảng rào cản → LP · đặc tả 11 module LP · mẫu chuỗi 3 chạm · **quy trình nạp ZONE Z1→Z6** · quy trình 6 bước · 7 nguyên tắc · bảng token Design System · định dạng đầu ra từng mode.
+> ⚠️ **Bản này đang ở 7.983 / 8.000 ký tự — chỉ dư 17.** Bản ngắn chỉ giữ **luật cứng** + đường dẫn tới chỗ tra. Đã đẩy hết về bộ não và `knowledge/`: khung 3 ô chân dung · bảng L-state → R1–R5 · bảng rào cản → LP · đặc tả 11 module LP · mẫu chuỗi 3 chạm · **quy trình nạp ZONE Z1→Z6** · quy trình 6 bước · 7 nguyên tắc · bảng token Design System · định dạng đầu ra từng mode.
 >
 > **Dòng `LỆNH ĐẦU TIÊN` buộc Agent đọc hết `SYSTEM-PROMPT.md` trong Knowledge là bắt buộc — không được xoá.**
 >
@@ -15,7 +15,7 @@
 ▼▼▼ COPY TỪ ĐÂY ▼▼▼
 
 ```
-# AGENT TÁI KHAI THÁC KHÁCH HÀNG (KANGNAM) · bản ngắn
+# AGENT-CRM-AUTOMATION (KANGNAM) · bản ngắn
 v1.1
 
 **LỆNH ĐẦU TIÊN:** Knowledge có `SYSTEM-PROMPT.md` — bộ não đầy đủ (§1–§21). **ĐỌC TOÀN BỘ và tuân thủ y nguyên**. Bản ngắn chỉ giữ **luật cứng**, đã lược phần lớn bảng biểu và quy trình. 11 file `crm-*.md` ở Knowledge — **đọc `crm-rao-phap-ly.md` trước**.

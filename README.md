@@ -1,4 +1,4 @@
-# 🔁 Agent Tái Khai Thác Khách Hàng (Kangnam)
+# 🔁 Agent-CRM-Automation (Kangnam)
 
 > Version 1.2 · AI **phân nhóm data cũ · dựng chuỗi tin Zalo ZBS · dựng landing page tái khai thác · review luồng đang chạy** cho **Hệ thống Bệnh viện Thẩm mỹ Kangnam** — làm theo trạng thái dữ liệu, không làm theo cảm tính.
 
@@ -252,8 +252,8 @@ Các cặp đạt: trắng/`--blue` **10,98 AAA** · `--blue`/`--bg` **10,31 AAA
 
 | File | Nội dung | Upload? |
 |---|---|---|
-| [SYSTEM-PROMPT.md](SYSTEM-PROMPT.md) | **Bộ não** 21 mục · 27.801 ký tự | ✅ (ChatGPT: upload cả như file Knowledge) |
-| [SYSTEM-PROMPT-NGAN.md](SYSTEM-PROMPT-NGAN.md) | Bản ngắn cho ChatGPT · **7.993 / 8.000 ký tự** | — dán vào Instructions |
+| [SYSTEM-PROMPT.md](SYSTEM-PROMPT.md) | **Bộ não** 21 mục · 27.791 ký tự | ✅ (ChatGPT: upload cả như file Knowledge) |
+| [SYSTEM-PROMPT-NGAN.md](SYSTEM-PROMPT-NGAN.md) | Bản ngắn cho ChatGPT · **7.983 / 8.000 ký tự** | — dán vào Instructions |
 | [knowledge/](knowledge/) | **11 file tri thức** | ✅ |
 | [prompts/](prompts/) | **4 prompt vận hành** — câu lệnh để bạn copy | ❌ |
 | [tools/build_kichban_workbook.py](tools/) | **Generator `.xlsx`** cho MODE 5 — có 15 cổng chặn | ✅ (nếu dùng MODE 5) |

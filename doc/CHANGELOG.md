@@ -1,4 +1,21 @@
-# CHANGELOG — AGENT TÁI KHAI THÁC KHÁCH HÀNG
+# CHANGELOG — AGENT-CRM-AUTOMATION
+
+## v1.2.2 — 13/10/2026 · Chốt một tên duy nhất + khôi phục khuôn LP
+
+**Tên hiển thị: `Agent-CRM-Automation`.** Trước đó tài liệu ghi *Agent Tái Khai Thác Khách Hàng* còn trang hướng dẫn ghi *Agent-CRM-Automation*, nên ô **Tên** dán vào Custom GPT khác nhau tuỳ người đọc nguồn nào. Nay cả hai nguồn giống nhau từng ký tự — **20 ký tự, không hậu tố `— Kangnam`**.
+
+Đổi ở 7 file: `README.md` · `SYSTEM-PROMPT.md` · `SYSTEM-PROMPT-NGAN.md` · `doc/01-cai-dat.md` · `doc/02-cau-lenh.md` · `doc/03-output-mau.md` · `doc/CHANGELOG.md` (tiêu đề). Dòng v1.0 nói về *đặc tả nội bộ* giữ nguyên tên cũ vì đó là tên bản đặc tả, không phải tên agent.
+
+Tên ngắn hơn 10 ký tự nên hai khối ▼▲ cùng co lại:
+
+| Khối | Trước | Sau |
+|---|---|---|
+| `SYSTEM-PROMPT.md` | 27.801 | **27.791** |
+| `SYSTEM-PROMPT-NGAN.md` | 7.993 (dư 7) | **7.983 (dư 17)** |
+
+**Khôi phục `template/lp-tai-khai-thac.html`.** Commit trước dùng `git add -A` nên gom luôn một lượt xoá không chủ ý — khuôn LP dựng ở v1.2.1 biến mất khỏi repo đã push. Lấy lại nguyên trạng, trùng byte-for-byte. Sáu chỗ trong bộ não, README và `knowledge/` gọi đúng tên file này.
+
+---
 
 ## v1.2.1 — 13/10/2026 · Dựng lại khuôn LP theo trang production
 

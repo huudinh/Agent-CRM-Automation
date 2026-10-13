@@ -1,4 +1,4 @@
-# 03 · OUTPUT MẪU — AGENT TÁI KHAI THÁC KHÁCH HÀNG
+# 03 · OUTPUT MẪU — AGENT-CRM-AUTOMATION
 
 Ví dụ xuyên suốt: **1.200 khách 6 tháng** · **ZONE Hàm Mặt**, dịch vụ chỉnh hàm hô/móm · mục tiêu **kéo Outsold về cọc**.
 
